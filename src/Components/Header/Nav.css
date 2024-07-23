@@ -80,9 +80,3 @@
 	display: block;
 }
 
-.navbar_mobile_menu_header {
-	display: flex;
-	justify-content: space-between;
-	color: var(--light);
-	padding: 5px;
-}

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
-import Nav from "./Components/Nav.jsx";
+import Nav from "./Components/Header/Nav.jsx";
 import Footer from "./Components/Footer.jsx";
 
 // Pages
