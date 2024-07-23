@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import {BrowserRouter as Router, Routes, Route  } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import Nav from "./Components/Nav.jsx";
@@ -21,44 +21,44 @@ import Store from "./Pages/Store.jsx";
 import AboutSeller from "./Pages/AboutSeller.jsx";
 import NotFound from "./Pages/NotFound.jsx";
 
-
 function App() {
 	return (
-    <Router>
-      <header>
-        <Nav />
-      </header>
+		<Router>
+			<div className="layout">
+				<header>
+					<Nav />
+				</header>
+				<main>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/auth" element={<Auth />} />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} />
-          
-          <Route path="/shoes" element={<Shoes />} >
-            <Route path=":id" element={<Shoe />} />
-          </Route>
-          
-          <Route path="/account" element={<Account />} >
-            <Route path="" element={<Account />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="listing/new" element={<NewListing />} />
-            <Route path="listing/:id/edit" element={<EditListing />} />
-            <Route path="listing/:id" element={<ShoeListing />} />
-          </Route>
+						<Route path="/shoes" element={<Shoes />}>
+							<Route path=":id" element={<Shoe />} />
+						</Route>
 
-          <Route path="/seller/:id" element={<Seller />} >
-            <Route path="" element={<Store />} />
-            <Route path="about" element={<AboutSeller />} />
-          </Route>
+						<Route path="/account" element={<Account />}>
+							<Route path="" element={<Account />} />
+							<Route path="profile" element={<Profile />} />
+							<Route path="listing/new" element={<NewListing />} />
+							<Route path="listing/:id/edit" element={<EditListing />} />
+							<Route path="listing/:id" element={<ShoeListing />} />
+						</Route>
 
-          <Route path="*" element={<NotFound />} />
+						<Route path="/seller/:id" element={<Seller />}>
+							<Route path="" element={<Store />} />
+							<Route path="about" element={<AboutSeller />} />
+						</Route>
 
-        </Routes>
-      </main>
-      
-      <Footer />
-    </Router>
-  )
+						<Route path="*" element={<NotFound />} />
+					</Routes>
+				</main>
+				<footer>
+					<Footer />
+				</footer>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
