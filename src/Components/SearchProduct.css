@@ -1,4 +1,28 @@
-.search{
-  height: 100vh;
-  
+.search {
+	color: var(--dark);
+	height: 100%;
+	display: grid;
+	grid-template-rows: 10% 1fr;
+	padding: 10px;
+}
+
+.search_header {
+	display: grid;
+	grid-template-columns: 1fr 10%;
+  align-items: center;
+	gap: 10px;
+	font-size: 14px;
+}
+
+.search_searchbar {
+	all: unset;
+	display: block;
+	border: 1px solid rgba(0, 0, 0, 0.217);
+	border-radius: 10px;
+	padding: 1px 10px;
+	height: 1.5em;
+}
+
+.search_results{
+	max-height: 600px;
 }
