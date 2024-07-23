@@ -1,0 +1,6 @@
+.layout {
+	display: grid;
+	grid-template-rows: 10% 1fr 20%;
+	height: 100vh;
+}
+
