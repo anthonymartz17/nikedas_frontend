@@ -27,7 +27,9 @@
 
 /* Mobile Menu */
 .navbar_mobile_menu {
-	position: absolute;
+	position: fixed;
+	overflow: hidden;
+	visibility: hidden;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -42,7 +44,9 @@
 }
 
 .navbar_search_product_mobile {
-	position: absolute;
+	position: fixed;
+	overflow: hidden;
+	visibility: hidden;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -62,6 +66,7 @@
 	transform: translateX(0);
 	opacity: 1;
 	z-index: 5;
+	visibility: visible;
 }
 
 .navbar_mobile_menu_backdrop {
