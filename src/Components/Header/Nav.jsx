@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Nav.css";
 import SearchProduct from "../Header/SearchProduct";
 import NavMobile from "./NavMobile";
@@ -14,6 +14,9 @@ export default function Nav() {
 	function toggleMenu() {
 		setIsMenuOpen((prev) => !prev);
 	}
+	useEffect(() => {
+		document.body.classList.toggle("no_scroll");
+	}, [isMenuOpen, isSearchOpen]);
 
 	return (
 		<nav className="navbar">

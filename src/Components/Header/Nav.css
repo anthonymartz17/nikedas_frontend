@@ -80,3 +80,6 @@
 	display: block;
 }
 
+.no_scroll {
+	overflow-y: hidden;
+}
