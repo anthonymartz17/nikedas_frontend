@@ -1,10 +1,11 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import LoginForm from '../Components/Login/LoginForm.jsx'
+
 
 export default function Auth() {
   return (
     <>
-      <Outlet />
+      <LoginForm />
     </>
   )
 }
