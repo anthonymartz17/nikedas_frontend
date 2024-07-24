@@ -2,19 +2,22 @@ import './Auth.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function SignUp() {
-  const [ SignUpForm, setSignUpForm ] = useState({
+export default function ForgotForm() {
+  const [ forgotForm, setForgotForm ] = useState({
     email: "",
     password: "",
     confirm_password: ""
   })
   
   function handleChange(e) {
-    const value = e.target.value
-    setSignUpForm({...loginForm, [e.target.id]:e.target.value})
+    const value = e.target.value;
+    setForgotForm({...forgotForm, [e.target.id]:e.target.value});
   }
 
-  console.log(loginForm)
+  function handleSubmit (e) {
+    e.preventDefault();
+    console.log(forgotForm);
+  }
 
   return (
     <section className="auth">
@@ -23,13 +26,13 @@ export default function SignUp() {
 
       <p>If your email exists we will send you an email to create a new password</p>
       
-      <form className="login_form">
+      <form className="login_form" onSubmit={handleSubmit}>
         
         <label></label>
         <input
           type="text"
           placeholder="Email*"
-          value={loginForm.email}
+          value={forgotForm.email}
           onChange={handleChange}
           id="email"
           required
@@ -38,8 +41,10 @@ export default function SignUp() {
         <button type="submit">Recover password</button>
       </form>
 
-      <a href="#" className="login">Login instead</a>
-      <a href="#" className="create_account">Create an account instead</a>
+      <Link to="/auth" className="login">Login instead</Link>
+      <Link to="/auth/signup" className="create_account">Create an account instead
+      </Link>
+      
 
     </section>
   )

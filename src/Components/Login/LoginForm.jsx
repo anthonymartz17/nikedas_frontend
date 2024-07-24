@@ -45,12 +45,12 @@ export default function LoginForm() {
           required
         />
         
-        <a href="#" className="forgot_password">Forgot Password?</a>
+        <Link to="/auth/forgot" className="forgot_password">Forgot Password?</Link>
         
         <button type="submit">Sign in</button>
       </form>
 
-      <a href="#" className="create_account">Create an account</a>
+      <Link to="signup" className="create_account">Create an account</Link>
 
     </section>
   )

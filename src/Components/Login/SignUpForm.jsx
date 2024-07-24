@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function SignUp() {
-  const [ SignUpForm, setSignUpForm ] = useState({
+  const [ signUpForm, setSignUpForm ] = useState({
     email: "",
     password: "",
     confirm_password: ""
@@ -11,21 +11,26 @@ export default function SignUp() {
   
   function handleChange(e) {
     const value = e.target.value
-    setSignUpForm({...loginForm, [e.target.id]:e.target.value})
+    setSignUpForm({...signUpForm, [e.target.id]:e.target.value})
+  }
+
+  function handleSubmit (e) {
+    e.preventDefault();
+    console.log(signUpForm);
   }
 
   return (
     <section className="auth">
 
-      <h3 className="auth-heading">Welcome back!</h3>
+      <h3 className="auth-heading">Create an account!</h3>
       
-      <form className="auth_form">
+      <form className="auth_form" onSubmit={handleSubmit}>
         
         <label></label>
         <input
           type="text"
           placeholder="Email*"
-          value={loginForm.email}
+          value={signUpForm.email}
           onChange={handleChange}
           id="email"
           required
@@ -35,7 +40,7 @@ export default function SignUp() {
         <input
           type="password"
           placeholder="Password*"
-          value={loginForm.password}
+          value={signUpForm.password}
           onChange={handleChange}
           id="password"
           required
@@ -45,18 +50,18 @@ export default function SignUp() {
         <input
           type="password"
           placeholder="Password*"
-          value={loginForm.confirm_password}
+          value={signUpForm.confirm_password}
           onChange={handleChange}
           id="confirm_password"
           required
         />
         
-        <a href="#" className="forgot_password">Forgot Password?</a>
+        <Link to="/auth/forgot" className="forgot_password">Forgot Password?</Link>
         
         <button type="submit">Sign up</button>
       </form>
 
-      <a href="#" className="login">Login instead</a>
+      <Link to="/auth" className="login">Login instead</Link>
 
     </section>
   )

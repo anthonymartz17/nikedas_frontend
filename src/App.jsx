@@ -9,6 +9,7 @@ import Footer from "./Components/Footer.jsx";
 // Pages
 import Home from "./Pages/Home.jsx";
 import Auth from "./Pages/Auth.jsx";
+import Login from "./Pages/Login.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import Forgot from "./Pages/Forgot.jsx";
 import Shoes from "./Pages/Shoes.jsx";
@@ -34,7 +35,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/auth" element={<Auth />} >
-              <Route path="" element={<Auth />} />
+              <Route path="" element={<Login />} />
               <Route path="signup" element={<SignUp />} />
               <Route path="forgot" element={<Forgot />} />
             </Route>
