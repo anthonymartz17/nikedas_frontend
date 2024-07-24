@@ -12,6 +12,10 @@
 	width: 100%;
 	color: var(--light);
 }
+.navbar_logo {
+  text-decoration: none;
+  color: var(--light);
+}
 .navbar_search_icon_menu_icon_container {
 	display: flex;
 	align-items: center;
