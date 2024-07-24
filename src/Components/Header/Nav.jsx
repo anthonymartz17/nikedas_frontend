@@ -49,6 +49,7 @@ export default function Nav() {
 					<div className="navbar_logo">NIKEDAS</div>
 					<NavDesktop />
 					<input
+						style={{ width: "20%" }}
 						className="search_searchbar"
 						type="text"
 						placeholder="Search"

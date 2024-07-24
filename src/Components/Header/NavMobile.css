@@ -12,7 +12,8 @@
 }
 .links {
 	color: var(--light);
-	font-size: 24px;
+	font-size: 16px;
+	font-weight: 700;
 	display: grid;
 	padding: 1em;
 }
