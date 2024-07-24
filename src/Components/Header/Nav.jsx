@@ -2,6 +2,7 @@ import "./Nav.css";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import SearchProduct from "../Header/SearchProduct";
+import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
 
 export default function Nav() {
@@ -21,8 +22,14 @@ export default function Nav() {
 
 	return (
 		<nav className="navbar">
+
+		
+			<div className="navbar_mobile">
+				<div className="navbar_logo">NIKEDAS</div>
+
 			<div className="navbar_container">
 				<Link to="/" className="navbar_logo">NIKEDAS</Link>
+
 				<div className="navbar_search_icon_menu_icon_container">
 					<span
 						onClick={toggleSearch}
@@ -38,6 +45,27 @@ export default function Nav() {
 					</span>
 				</div>
 			</div>
+			<div className="navbar_desktop">
+				<div className="navbar_desktop_top">
+					<div className="auth">
+						<span>Login</span>
+						<span>Join Us</span>
+					</div>
+				</div>
+				<div className="navbar_desktop_bottom">
+					<div className="navbar_logo">NIKEDAS</div>
+					<NavDesktop />
+					<input
+						className="search_searchbar"
+						type="text"
+						placeholder="Search"
+					/>
+					<div className="shopping_cart">
+						<span className="material-symbols-outlined">local_mall</span>
+					</div>
+				</div>
+			</div>
+			
 
 			<div className={`navbar_mobile_menu ${isMenuOpen ? "active" : ""}`}>
 				<NavMobile onToggleMenu={toggleMenu} />
