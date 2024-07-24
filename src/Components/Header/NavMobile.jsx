@@ -1,4 +1,5 @@
 import "./NavMobile.css";
+import { Link } from "react-router-dom"
 
 const categories = ["Men", "Women", "Kids", "Brands"];
 export default function NavMobile({ onToggleMenu }) {
@@ -23,8 +24,9 @@ export default function NavMobile({ onToggleMenu }) {
 				</ul>
 			</div>
 			<div className="navbar_footer">
-				<button className="btn btn_bg_light">Join Us</button>
-				<button className="btn btn_mute_light">Log in</button>
+				<Link to="/auth/signup" className="btn btn_bg_light" onClick={() => onToggleMenu()}>Join Us</Link>
+        <Link to="/auth" className="btn btn_mute_light" onClick={() => onToggleMenu()}>Log In</Link>
+
 			</div>
 		</div>
 	);
