@@ -1,10 +1,11 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import SignUpForm from '../Components/Login/SignUpForm.jsx'
+
 
 export default function Auth() {
   return (
     <>
-      <Outlet />
+      <SignUpForm />
     </>
   )
 }
