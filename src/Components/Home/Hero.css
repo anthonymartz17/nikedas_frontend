@@ -1,0 +1,44 @@
+.hero * {
+  /* border: 1px solid red; */
+}
+
+.hero {
+  width: 80%;
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+}
+
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.hero-heading {
+  font-size: 6rem;
+}
+
+.hero-text {
+font-size: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-buttons button {
+  /* width: 100px; */
+  height: 25px;
+  border: 1px solid black;
+}
+
+.browse {
+  color: var(--light);
+  background: var(--dark)
+}
+
+.hero-img {
+  width: 50%;
+}
