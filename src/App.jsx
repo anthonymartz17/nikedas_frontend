@@ -2,6 +2,8 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// update branch delete
+
 // Components
 import Nav from "./Components/Header/Nav.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
