@@ -40,7 +40,7 @@
 	opacity: 0;
 	transform: translateX(100%);
 	transition: all 150ms ease-in-out;
-	box-shadow: -10px 0px 10px 1px #aaaaaa85;
+	box-shadow: -1px 0px 10px 1px #6d6b6b85;
 }
 
 .navbar_search_product_mobile {
