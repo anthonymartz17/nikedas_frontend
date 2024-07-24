@@ -10,6 +10,12 @@ body {
 	background-color: var(--light);
 }
 
+/* links */
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+
 /* buttons */
 .btn {
 	all: unset;

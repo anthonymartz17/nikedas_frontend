@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import Nav from "./Components/Header/Nav.jsx";
-import Footer from "./Components/Footer.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
 
 // Pages
 import Home from "./Pages/Home.jsx";
@@ -60,9 +60,7 @@ function App() {
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</main>
-				<footer>
-					<Footer />
-				</footer>
+				<Footer />
 			</div>
 		</Router>
 	);
