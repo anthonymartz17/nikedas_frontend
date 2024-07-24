@@ -21,7 +21,6 @@ export default function Nav() {
 
 	return (
 		<nav className="navbar">
-			{/* <div className="navbar_mobile"> */}
 			<div className="navbar_mobile">
 				<div className="navbar_logo">NIKEDAS</div>
 				<div className="navbar_search_icon_menu_icon_container">
@@ -59,7 +58,6 @@ export default function Nav() {
 					</div>
 				</div>
 			</div>
-			{/* </div> */}
 
 			<div className={`navbar_mobile_menu ${isMenuOpen ? "active" : ""}`}>
 				<NavMobile onToggleMenu={toggleMenu} />
