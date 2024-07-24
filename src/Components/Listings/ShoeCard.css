@@ -14,5 +14,6 @@
 }
 
 .shoe_description {
-
+display: grid;
+gap: 10px;
 }
