@@ -17,7 +17,7 @@ export default function NavDesktop() {
   }
 
   return (
-    <div className="navigation_desktop">
+    <div className="navigation_desktop poppins-light">
       <ul className="navigation_desktop_links">
         {categories.map(({ category }, idx) => (
           <li
@@ -26,7 +26,7 @@ export default function NavDesktop() {
             onMouseLeave={hideDropdown}
             key={idx}
           >
-            <span>{category}</span>
+            <span className="navigation_desktop_links_item_text">{category}</span>
           </li>
         ))}
       </ul>
@@ -39,10 +39,10 @@ export default function NavDesktop() {
         <ul className="navigation_desktop_dropdown_list">
           {details.map((detail, idx) => (
             <div key={idx}>
-              <h3 className="navigation_desktop_dropdown_title">
+              <h4 className="navigation_desktop_dropdown_title poppins-semibold">
                 {detail.title}
-              </h3>
-              <ul className="navigation_desktop_dropdown_details">
+              </h4>
+              <ul className="navigation_desktop_dropdown_details poppins-light ">
                 {detail.items.map((item, idx) => (
                   <li
                     className="navigation_desktop_dropdown_details_item"

@@ -22,8 +22,8 @@ export default function Nav() {
 	return (
 		<nav className="navbar">
 			<div className="navbar_mobile">
-				<div className="navbar_logo">NIKEDAS</div>
-				<div className="navbar_search_icon_menu_icon_container">
+				<div className="navbar_logo poppins-bold">NIKEDAS</div>
+				<div className="navbar_search_icon_menu_icon_container ">
 					<span
 						onClick={toggleSearch}
 						className="navbar_searchbar material-symbols-outlined"
@@ -40,15 +40,17 @@ export default function Nav() {
 			</div>
 			<div className="navbar_desktop">
 				<div className="navbar_desktop_top">
-					<div className="auth">
+					<div className="auth poppins-light ">
 						<span>Login</span>
 						<span>Join Us</span>
 					</div>
 				</div>
 				<div className="navbar_desktop_bottom">
-					<div className="navbar_logo">NIKEDAS</div>
+					<div className="navbar_logo poppins-bold">NIKEDAS</div>
 					<NavDesktop />
 					<input
+						onClick={() => toggleSearch()}
+						// disabled
 						style={{ width: "20%" }}
 						className="search_searchbar"
 						type="text"

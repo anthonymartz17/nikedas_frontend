@@ -4,7 +4,12 @@ export default function SearchProduct({ onToggleSearch }) {
 	return (
 		<div className="search">
 			<div className="search_header">
-				<input className="search_searchbar" type="text" placeholder="Search" />
+				<input
+					className="search_searchbar"
+					type="text"
+					placeholder="Search"
+					autoFocus
+				/>
 
 				<p className="search_close" onClick={() => onToggleSearch()}>
 					Cancel

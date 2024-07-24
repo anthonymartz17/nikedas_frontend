@@ -122,13 +122,13 @@
 		color: var(--dark);
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		padding: 10px 3em;
 	}
 
 	.auth {
 		display: flex;
 		gap: 1em;
-		font-weight: 700;
 	}
 }
 
