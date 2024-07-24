@@ -1,10 +1,11 @@
 import React from 'react'
-import LoginForm from '../Components/Login/LoginForm.jsx'
+import SignUpForm from '../Components/Login/SignUpForm.jsx'
+
 
 export default function Auth() {
   return (
     <>
-      <LoginForm />
+      <SignUpForm />
     </>
   )
 }

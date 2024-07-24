@@ -9,6 +9,8 @@ import Footer from "./Components/Footer.jsx";
 // Pages
 import Home from "./Pages/Home.jsx";
 import Auth from "./Pages/Auth.jsx";
+import SignUp from "./Pages/SignUp.jsx";
+import Forgot from "./Pages/Forgot.jsx";
 import Shoes from "./Pages/Shoes.jsx";
 import Shoe from "./Pages/Shoe.jsx";
 import Account from "./Pages/Account.jsx";
@@ -31,7 +33,11 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/auth" element={<Auth />} />
+						<Route path="/auth" element={<Auth />} >
+              <Route path="" element={<Auth />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="forgot" element={<Forgot />} />
+            </Route>
 
 						<Route path="/shoes" element={<Shoes />}>
 							<Route path=":id" element={<Shoe />} />

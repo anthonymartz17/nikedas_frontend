@@ -1,4 +1,4 @@
-.login {
+.auth {
   width: 300px;
   height: 400px;
   margin: 20px auto;
@@ -11,11 +11,11 @@
   text-align: center;
 }
 
-.login * {
+.auth * {
   box-sizing:border-box;
 }
 
-.login_form {
+.auth_form {
   width: 100%;
   margin: 50px 0;
   display: flex;
@@ -33,11 +33,12 @@ input {
   align-self: start;
 }
 
-.login_form button {
+.auth_form button {
   width: 100px;
   align-self: end;
 }
 
 .create_account {
-
+  color: black;
+  text-decoration: none;
 }
