@@ -1,5 +1,6 @@
 import './Hero.css'
 import heroShoe from '../../../public/assets/hero-shoe-01.png'
+import { Link } from "react-router-dom"
 
 export default function Hero() {
   return (
@@ -9,8 +10,8 @@ export default function Hero() {
         <p className="hero-text">Elevate your shoe game with our latest 
         collection that's making waves in the industry</p>
         <div className="hero-buttons">
-          <button className="btn browse">Browse</button>
-          <button className="btn sign_up">Become Seller</button>
+          <Link to="/shoes" className="btn btn_bg_dark">Browse</Link>
+          <Link to="/auth/signup" className="btn btn_bg_light">Become Seller</Link>
         </div>
       </section>
       <img className="hero-img" src={heroShoe} />
