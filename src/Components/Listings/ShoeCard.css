@@ -1,0 +1,19 @@
+.shoe_card {
+
+}
+
+.shoe_img_container {
+	height: 10.50em;
+	width: 10.50em;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+.shoe_img_container img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.shoe_description {
+display: grid;
+gap: 10px;
+}

@@ -1,6 +1,6 @@
 import "./Nav.css";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import SearchProduct from "../Header/SearchProduct";
 import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
@@ -22,15 +22,12 @@ export default function Nav() {
 
 	return (
 		<nav className="navbar">
-
-		
 			<div className="navbar_mobile">
-				<div className="navbar_logo">NIKEDAS</div>
+				<Link to="/" className="navbar_logo poppins-bold">
+					NIKEDAS
+				</Link>
 
-			<div className="navbar_container">
-				<Link to="/" className="navbar_logo">NIKEDAS</Link>
-
-				<div className="navbar_search_icon_menu_icon_container">
+				<div className="navbar_search_icon_menu_icon_container ">
 					<span
 						onClick={toggleSearch}
 						className="navbar_searchbar material-symbols-outlined"
@@ -47,15 +44,20 @@ export default function Nav() {
 			</div>
 			<div className="navbar_desktop">
 				<div className="navbar_desktop_top">
-					<div className="auth">
-						<span>Login</span>
-						<span>Join Us</span>
+					<div className="auth_btn_container poppins-light ">
+						<Link to="/auth">Login</Link>
+						<Link to="/auth/signup">Join Us</Link>
 					</div>
 				</div>
 				<div className="navbar_desktop_bottom">
-					<div className="navbar_logo">NIKEDAS</div>
+					<Link to="/" className="navbar_logo poppins-bold">
+						NIKEDAS
+					</Link>
 					<NavDesktop />
 					<input
+						onClick={() => toggleSearch()}
+						// disabled
+						style={{ width: "20%" }}
 						className="search_searchbar"
 						type="text"
 						placeholder="Search"
@@ -65,7 +67,6 @@ export default function Nav() {
 					</div>
 				</div>
 			</div>
-			
 
 			<div className={`navbar_mobile_menu ${isMenuOpen ? "active" : ""}`}>
 				<NavMobile onToggleMenu={toggleMenu} />

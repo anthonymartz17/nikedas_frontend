@@ -13,8 +13,8 @@
 	color: var(--light);
 }
 .navbar_logo {
-  text-decoration: none;
-  color: var(--light);
+	text-decoration: none;
+	color: var(--light);
 }
 .navbar_search_icon_menu_icon_container {
 	display: flex;
@@ -44,7 +44,7 @@
 	opacity: 0;
 	transform: translateX(100%);
 	transition: all 150ms ease-in-out;
-	box-shadow: -10px 0px 10px 1px #aaaaaa85;
+	box-shadow: -1px 0px 10px 1px #6d6b6b85;
 }
 
 .navbar_search_product_mobile {
@@ -102,6 +102,9 @@
 	.navbar_mobile {
 		display: none;
 	}
+	.navbar_logo {
+		color: var(--dark);
+	}
 	.navbar {
 		background-color: var(--light);
 		padding-inline: 1em;
@@ -126,13 +129,13 @@
 		color: var(--dark);
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		padding: 10px 3em;
 	}
 
-	.auth {
+	.auth_btn_container {
 		display: flex;
 		gap: 1em;
-		font-weight: 700;
 	}
 }
 

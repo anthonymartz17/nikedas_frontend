@@ -5,7 +5,7 @@ import categories from "./navigation";
 
 export default function NavMobile({ onToggleMenu }) {
 	return (
-		<div className="nav_mobile">
+		<div className="nav_mobile poppins-light">
 			<div className="navbar_mobile_menu_header">
 				<span className="navbar_mobile_menu_back">back</span>
 				<span onClick={onToggleMenu} className="material-symbols-outlined">

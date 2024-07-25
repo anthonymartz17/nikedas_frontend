@@ -1,3 +1,5 @@
+import Nike from "../../assets/brands/Nike.svg";
+
 export default [
 	{
 		category: "Men",
@@ -160,7 +162,7 @@ export default [
 			{
 				title: "Brands",
 				items: [
-					{ name: "Nike" },
+					{ name: "Nike", img: Nike },
 					{ name: "Adidas" },
 					{ name: "Puma" },
 					{ name: "Reebok" },
