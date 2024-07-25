@@ -3,24 +3,24 @@
 :root {
 	--light: #ffffff;
 	--dark: #1a1a1a;
-	--accent: #4f6479;
+	--dark-hover: #313131;
+	--accent: #ff3131;
 }
 
 body {
 	background-color: var(--light);
-	font-family: "Poppins", sans-serif;
 }
 
 /* links */
 a {
-  text-decoration: none;
-  color: var(--light);
+	text-decoration: none;
+	color: var(--light);
 }
 
 /* links */
 a {
-  text-decoration: none;
-  color: var(--light);
+	text-decoration: none;
+	color: var(--light);
 }
 
 /* buttons */
@@ -32,6 +32,9 @@ a {
 	border-radius: 15px;
 	text-align: center;
 	cursor: pointer;
+	display: block;
+	font-family: "Poppins", sans-serif;
+	/* width: 100%; */
 }
 .btn_bg_light {
 	background-color: var(--light);
@@ -49,8 +52,7 @@ a {
 }
 
 .btn_bg_dark:hover {
-	background-color: var(--light);
-	color: var(--dark);
+	background-color: var(--accent);
 }
 .btn_mute_light {
 	background-color: transparent;
@@ -60,6 +62,18 @@ a {
 }
 
 .btn_mute_light:hover {
+	background-color: var(--accent);
+	color: var(--light);
+}
+.btn_mute_dark {
+	background-color: transparent;
+	border: 1px solid var(--dark);
+	color: var(--dark);
+	transition: all 250ms ease-in-out;
+}
+
+.btn_mute_dark:hover {
+	border: 1px solid transparent;
 	background-color: var(--accent);
 	color: var(--light);
 }

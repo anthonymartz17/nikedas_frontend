@@ -35,6 +35,7 @@
 	place-items: center;
 	transform: translateY(-20px);
 	transition: opacity 0.2s ease, transform 0.3s ease, visibility 0.3s ease;
+	z-index: 2;
 }
 
 .navigation_desktop_dropdown.visible {
@@ -63,6 +64,9 @@
 	color: var(--accent);
 }
 
+/* Add responsiveness */
 @media (min-width: 768px) {
-	/* Add responsive styles if needed */
+}
+
+@media (min-width: 992px) {
 }

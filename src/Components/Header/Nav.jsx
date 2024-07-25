@@ -45,12 +45,14 @@ export default function Nav() {
 			<div className="navbar_desktop">
 				<div className="navbar_desktop_top">
 					<div className="auth_btn_container poppins-light ">
-						<span>Login</span>
-						<span>Join Us</span>
+						<Link to="/auth">Login</Link>
+						<Link to="/auth/signup">Join Us</Link>
 					</div>
 				</div>
 				<div className="navbar_desktop_bottom">
-					<div className="navbar_logo poppins-bold">NIKEDAS</div>
+					<Link to="/" className="navbar_logo poppins-bold">
+						NIKEDAS
+					</Link>
 					<NavDesktop />
 					<input
 						onClick={() => toggleSearch()}
