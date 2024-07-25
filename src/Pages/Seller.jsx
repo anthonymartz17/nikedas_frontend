@@ -1,7 +1,10 @@
 import React from 'react'
+import { Outlet } from "react-router-dom"
 
 export default function Seller() {
   return (
-    <div>Seller</div>
+    <div>
+      <Outlet />
+    </div>
   )
 }
