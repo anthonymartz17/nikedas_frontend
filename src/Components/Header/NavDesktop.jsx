@@ -1,8 +1,9 @@
 import categories from "./navigation";
 import "./NavDesktop.css";
 import { useRef, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function NavDesktop() {
+	const navigate = useNavigate();
 	const dropdownRef = useRef(null);
 	const [details, setDetails] = useState([]);
 	const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -14,6 +15,11 @@ export default function NavDesktop() {
 
 	function hideDropdown() {
 		setIsDropdownVisible(false);
+	}
+
+	function searchShoes() {
+		navigate("/shoes");
+		hideDropdown()
 	}
 
 	return (
@@ -49,6 +55,7 @@ export default function NavDesktop() {
 							<ul className="navigation_desktop_dropdown_details poppins-light ">
 								{detail.items.map((item, idx) => (
 									<li
+										onClick={() => searchShoes()}
 										className="navigation_desktop_dropdown_details_item"
 										key={idx}
 									>
