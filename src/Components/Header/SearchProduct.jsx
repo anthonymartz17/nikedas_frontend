@@ -1,9 +1,19 @@
 import "./SearchProduct.css";
+import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
+
 import Shoes from "../../assets/shoes_db";
 import ShoeCard from "../Listings/ShoeCard";
 export default function SearchProduct({ onToggleSearch }) {
 	return (
 		<div className="search">
+			<div className="search_logo_container">
+				<img
+					className="nikedas_full_logo"
+					src={logoFullDark}
+					alt="nikedas_logo"
+				/>
+			</div>
+
 			<div className="search_header">
 				<input
 					className="search_searchbar"

@@ -13,8 +13,8 @@ body {
 
 /* links */
 a {
-  text-decoration: none;
-  color: var(--light);
+	text-decoration: none;
+	color: var(--light);
 }
 
 /* buttons */
@@ -179,6 +179,11 @@ a {
 	font-family: "Poppins", sans-serif;
 	font-weight: 900;
 	font-style: italic;
+}
+
+/* Logo  */
+.nikedas_full_logo {
+	height: 20px;
 }
 
 /* End buttons */
