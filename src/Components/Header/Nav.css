@@ -130,7 +130,7 @@
 		padding: 10px 3em;
 	}
 
-	.auth {
+	.auth_btn_container {
 		display: flex;
 		gap: 1em;
 	}

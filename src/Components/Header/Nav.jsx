@@ -41,49 +41,46 @@ export default function Nav() {
 						menu
 					</span>
 				</div>
-
-				<div className="navbar_desktop">
-					<div className="navbar_desktop_top">
-						<div className="auth poppins-light ">
-							<span>Login</span>
-							<span>Join Us</span>
-						</div>
-					</div>
-					<div className="navbar_desktop_bottom">
-						<div className="navbar_logo poppins-bold">NIKEDAS</div>
-						<NavDesktop />
-						<input
-							onClick={() => toggleSearch()}
-							// disabled
-							style={{ width: "20%" }}
-							className="search_searchbar"
-							type="text"
-							placeholder="Search"
-						/>
-						<div className="shopping_cart">
-							<span className="material-symbols-outlined">local_mall</span>
-						</div>
+			</div>
+			<div className="navbar_desktop">
+				<div className="navbar_desktop_top">
+					<div className="auth_btn_container poppins-light ">
+						<span>Login</span>
+						<span>Join Us</span>
 					</div>
 				</div>
-
-				<div className={`navbar_mobile_menu ${isMenuOpen ? "active" : ""}`}>
-					<NavMobile onToggleMenu={toggleMenu} />
+				<div className="navbar_desktop_bottom">
+					<div className="navbar_logo poppins-bold">NIKEDAS</div>
+					<NavDesktop />
+					<input
+						onClick={() => toggleSearch()}
+						// disabled
+						style={{ width: "20%" }}
+						className="search_searchbar"
+						type="text"
+						placeholder="Search"
+					/>
+					<div className="shopping_cart">
+						<span className="material-symbols-outlined">local_mall</span>
+					</div>
 				</div>
+			</div>
 
-				<div
-					onClick={toggleMenu}
-					className={`navbar_mobile_menu_backdrop ${
-						isMenuOpen ? "active" : ""
-					}`}
-				></div>
+			<div className={`navbar_mobile_menu ${isMenuOpen ? "active" : ""}`}>
+				<NavMobile onToggleMenu={toggleMenu} />
+			</div>
 
-				<div
-					className={`navbar_search_product_mobile ${
-						isSearchOpen ? "active" : ""
-					}`}
-				>
-					<SearchProduct onToggleSearch={toggleSearch} />
-				</div>
+			<div
+				onClick={toggleMenu}
+				className={`navbar_mobile_menu_backdrop ${isMenuOpen ? "active" : ""}`}
+			></div>
+
+			<div
+				className={`navbar_search_product_mobile ${
+					isSearchOpen ? "active" : ""
+				}`}
+			>
+				<SearchProduct onToggleSearch={toggleSearch} />
 			</div>
 		</nav>
 	);
