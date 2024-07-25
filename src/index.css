@@ -13,14 +13,8 @@ body {
 
 /* links */
 a {
-	text-decoration: none;
-	color: var(--light);
-}
-
-/* links */
-a {
-	text-decoration: none;
-	color: var(--light);
+  text-decoration: none;
+  color: var(--light);
 }
 
 /* buttons */
