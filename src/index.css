@@ -11,6 +11,18 @@ body {
 	font-family: "Poppins", sans-serif;
 }
 
+/* links */
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+
+/* links */
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+
 /* buttons */
 .btn {
 	all: unset;
@@ -31,8 +43,8 @@ body {
 	color: var(--light);
 }
 .btn_bg_dark {
-	background-color: var(--light);
-	color: var(--dark);
+	background-color: var(--dark);
+	color: var(--light);
 	transition: all 150ms ease-in-out;
 }
 

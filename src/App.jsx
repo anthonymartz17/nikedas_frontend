@@ -2,13 +2,18 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// update branch delete
+
 // Components
 import Nav from "./Components/Header/Nav.jsx";
-import Footer from "./Components/Footer.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
 
 // Pages
 import Home from "./Pages/Home.jsx";
 import Auth from "./Pages/Auth.jsx";
+import Login from "./Pages/Login.jsx";
+import SignUp from "./Pages/SignUp.jsx";
+import Forgot from "./Pages/Forgot.jsx";
 import Shoes from "./Pages/Shoes.jsx";
 import Shoe from "./Pages/Shoe.jsx";
 import Account from "./Pages/Account.jsx";
@@ -31,7 +36,11 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/auth" element={<Auth />} />
+						<Route path="/auth" element={<Auth />} >
+              <Route path="" element={<Login />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="forgot" element={<Forgot />} />
+            </Route>
 
 						<Route path="/shoes" element={<Shoes />}>
 							<Route path=":id" element={<Shoe />} />
@@ -53,9 +62,7 @@ function App() {
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</main>
-				<footer>
-					<Footer />
-				</footer>
+				<Footer />
 			</div>
 		</Router>
 	);
