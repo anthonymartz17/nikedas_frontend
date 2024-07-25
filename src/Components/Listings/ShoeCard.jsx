@@ -8,7 +8,7 @@ export default function ShoeCard({ shoe }) {
 			</div>
 			<div className="shoe_description poppins-light">
 				<h5 className="poppins-semibold">{`${shoe.brand} ${shoe.model}`}</h5>
-				<p>{shoe.gender}</p>
+				<p>{shoe.gender}'s shoe</p>
 				<p>{shoe.description}</p>
 				<p className="poppins-semibold">${shoe.price}</p>
 			</div>

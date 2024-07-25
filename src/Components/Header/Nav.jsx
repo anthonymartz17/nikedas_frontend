@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import SearchProduct from "../Header/SearchProduct";
 import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
-
+import logoFullLight from "../../assets/logos_nikeda/nikedas_light.png";
+import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
 export default function Nav() {
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,11 @@ export default function Nav() {
 		<nav className="navbar">
 			<div className="navbar_mobile">
 				<Link to="/" className="navbar_logo poppins-bold">
-					NIKEDAS
+					<img
+						className="nikedas_full_logo"
+						src={logoFullLight}
+						alt="nikedas_logo"
+					/>
 				</Link>
 
 				<div className="navbar_search_icon_menu_icon_container ">
@@ -51,7 +56,11 @@ export default function Nav() {
 				</div>
 				<div className="navbar_desktop_bottom">
 					<Link to="/" className="navbar_logo poppins-bold">
-						NIKEDAS
+						<img
+							className="nikedas_full_logo"
+							src={logoFullDark}
+							alt="nikedas_logo"
+						/>
 					</Link>
 					<NavDesktop />
 					<input
