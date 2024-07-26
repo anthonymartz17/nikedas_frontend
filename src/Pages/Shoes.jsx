@@ -5,6 +5,7 @@ import "./Shoes.css";
 import { useState } from "react";
 import Subcategories from "../Components/ShoesDisplay/Subcategories";
 import ShoeFilters from "../Components/ShoesDisplay/ShoeFilters";
+import Accordion from "../Components/UI/Accordion";
 
 export default function Shoes() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -27,11 +28,10 @@ export default function Shoes() {
 
 			<div className="sidebar">
 				<Subcategories />
-			
+				<Accordion />
 			</div>
 
-      <div className="shoes_display_area">
-        
+			<div className="shoes_display_area">
 				{shoeList.map((shoe) => (
 					<ShoeCard shoe={shoe} key={shoe.id} />
 				))}

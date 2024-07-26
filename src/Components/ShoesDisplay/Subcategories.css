@@ -1,15 +1,33 @@
 .subcategories {
 	padding-inline: 1em;
-	background-color: red;
-	width: 50%;
-	height: 1em;
+	display: none;
 }
 
 .subcategories_list {
+	display: flex;
+	overflow-x: auto;
 	gap: 10px;
 	white-space: nowrap;
 }
 
 .subcategories_list_item {
 	min-width: fit-content;
+	transition: all 150ms ease-in-out;
+}
+
+@media (min-width: 992px) {
+	.subcategories {
+		display: block;
+		margin-bottom: 1.5em;
+		padding-bottom: 1em;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.364);
+	}
+	.subcategories_list {
+		flex-direction: column;
+		gap: 1em;
+	}
+	.subcategories_list_item:hover {
+		color: var(--accent);
+		cursor: pointer;
+	}
 }

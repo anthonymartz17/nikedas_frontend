@@ -30,7 +30,7 @@ export default function Subcategories() {
 	return (
     <div className="subcategories">
       
-			<ul className="subcategories_list">
+			<ul className="subcategories_list poppins-regular">
 				{shoeCategories.map((category, idx) => (
 					<li className="subcategories_list_item" key={idx}>{category}</li>
 				))}
