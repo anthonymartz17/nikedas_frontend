@@ -1,7 +1,11 @@
 import React from 'react'
+import ListingForm from '../Components/Account/ListingForm'
+
 
 export default function NewListing() {
   return (
-    <div>NewListing</div>
+    <div>
+      <ListingForm />
+    </div>
   )
 }

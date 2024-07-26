@@ -54,8 +54,9 @@ function App() {
 							<Route path="listing/:id" element={<ShoeListing />} />
 						</Route>
 
-						<Route path="/seller/:id" element={<Seller />}>
-							<Route path="" element={<Store />} />
+						<Route path="/seller" element={<Seller />}>
+							<Route path="" element={<Seller />} />
+							<Route path=":id" element={<Store />} />
 							<Route path="about" element={<AboutSeller />} />
 						</Route>
 
