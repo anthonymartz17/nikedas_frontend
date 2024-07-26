@@ -5,8 +5,7 @@ import AccountListings from "../Components/Account/AccountListings";
 export default function Account() {
   return (
     <div>
-      <AccountListings />
-      {/* <Outlet /> */}
+      <Outlet />
     </div>
   )
 }
