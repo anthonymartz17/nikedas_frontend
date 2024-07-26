@@ -23,6 +23,7 @@
 }
 
 .hero_img_container {
+	display: none;
 	text-align: center;
 	height: 100%;
 }
