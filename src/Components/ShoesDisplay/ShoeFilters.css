@@ -1,0 +1,42 @@
+.shoe_filters {
+	padding: 10px;
+	background-color: var(--light);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	font-family: "poppins";
+	columns: var(--dark);
+	overflow-y: auto;
+	height: 100%;
+	padding-bottom: 3em;
+}
+.shoe_apply_btn_container {
+	display: flex;
+	justify-content: end;
+	position: sticky;
+	top: 0;
+	padding-right: 10px;
+}
+
+.filter_group {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #ccc;
+}
+
+.filter_group h4 {
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.filter_group label {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 1rem;
+}
+
+.filter_group input[type="radio"] {
+	accent-color: #000; /* Adjust the accent color to match your theme */
+}

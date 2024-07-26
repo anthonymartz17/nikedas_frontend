@@ -1,10 +1,11 @@
 import "./NavMobile.css";
 import { Link } from "react-router-dom"
 
-const categories = ["Men", "Women", "Kids", "Brands"];
+import categories from "./navigation";
+
 export default function NavMobile({ onToggleMenu }) {
 	return (
-		<div className="nav_mobile">
+		<div className="nav_mobile poppins-light">
 			<div className="navbar_mobile_menu_header">
 				<span className="navbar_mobile_menu_back">back</span>
 				<span onClick={onToggleMenu} className="material-symbols-outlined">
@@ -15,7 +16,7 @@ export default function NavMobile({ onToggleMenu }) {
 				<ul className="links">
 					{categories.map((cat, idx) => (
 						<li key={idx} className="link_item">
-							<span>{cat}</span>
+							<span>{cat.category}</span>
 							<span className="material-symbols-outlined">
 								arrow_forward_ios
 							</span>

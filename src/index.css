@@ -1,9 +1,13 @@
-/* colors */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* colors */
 :root {
 	--light: #ffffff;
 	--dark: #1a1a1a;
-	--accent: #4f6479;
+	--dark-hover: #313131;
+	--accent: #ff3131;
 }
 
 body {
@@ -12,8 +16,8 @@ body {
 
 /* links */
 a {
-  text-decoration: none;
-  color: var(--light);
+	text-decoration: none;
+	color: var(--light);
 }
 
 /* buttons */
@@ -21,11 +25,13 @@ a {
 	all: unset;
 	background-color: white;
 	padding: 0.5em 2em;
-	font-size: 18px;
-	font-weight: 700;
-	border-radius: 50px;
+	font-size: 16px;
+	border-radius: 15px;
 	text-align: center;
 	cursor: pointer;
+	display: block;
+	font-family: "Poppins", sans-serif;
+	/* width: 100%; */
 }
 .btn_bg_light {
 	background-color: var(--light);
@@ -43,8 +49,7 @@ a {
 }
 
 .btn_bg_dark:hover {
-	background-color: var(--light);
-	color: var(--dark);
+	background-color: var(--accent);
 }
 .btn_mute_light {
 	background-color: transparent;
@@ -57,6 +62,133 @@ a {
 	background-color: var(--accent);
 	color: var(--light);
 }
+.btn_mute_dark {
+	background-color: transparent;
+	border: 1px solid var(--dark);
+	color: var(--dark);
+	transition: all 250ms ease-in-out;
+}
+
+.btn_mute_dark:hover {
+	border: 1px solid transparent;
+	background-color: var(--accent);
+	color: var(--light);
+}
+
+/* All fonts classes */
+.poppins-thin {
+	font-family: "Poppins", sans-serif;
+	font-weight: 100;
+	font-style: normal;
+}
+
+.poppins-extralight {
+	font-family: "Poppins", sans-serif;
+	font-weight: 200;
+	font-style: normal;
+}
+
+.poppins-light {
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.poppins-regular {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.poppins-medium {
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.poppins-semibold {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+.poppins-bold {
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.poppins-extrabold {
+	font-family: "Poppins", sans-serif;
+	font-weight: 800;
+	font-style: normal;
+}
+
+.poppins-black {
+	font-family: "Poppins", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+}
+
+.poppins-thin-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 100;
+	font-style: italic;
+}
+
+.poppins-extralight-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 200;
+	font-style: italic;
+}
+
+.poppins-light-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.poppins-regular-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.poppins-medium-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	font-style: italic;
+}
+
+.poppins-semibold-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	font-style: italic;
+}
+
+.poppins-bold-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.poppins-extrabold-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 800;
+	font-style: italic;
+}
+
+.poppins-black-italic {
+	font-family: "Poppins", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+}
+
+/* Logo  */
+.nikedas_full_logo {
+	height: 20px;
+}
+
 /* End buttons */
 
 /* css reset normalization */

@@ -1,21 +1,23 @@
 .navbar {
 	background-color: var(--dark);
-	display: flex;
-	align-items: center;
-	padding-inline: 10px;
 	height: 100%;
+	padding-inline: 1em;
+	
 }
-.navbar_container {
+
+.navbar_mobile {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 100%;
 	width: 100%;
 	color: var(--light);
 }
 .navbar_logo {
-  text-decoration: none;
-  color: var(--light);
+	text-decoration: none;
+	color: var(--light);
 }
+
 .navbar_search_icon_menu_icon_container {
 	display: flex;
 	align-items: center;
@@ -31,7 +33,9 @@
 
 /* Mobile Menu */
 .navbar_mobile_menu {
-	position: absolute;
+	position: fixed;
+	overflow: hidden;
+	visibility: hidden;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -42,11 +46,13 @@
 	opacity: 0;
 	transform: translateX(100%);
 	transition: all 150ms ease-in-out;
-	box-shadow: -10px 0px 10px 1px #aaaaaa85;
+	box-shadow: -1px 0px 10px 1px #6d6b6b85;
 }
 
 .navbar_search_product_mobile {
-	position: absolute;
+	position: fixed;
+	overflow: hidden;
+	visibility: hidden;
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -66,6 +72,7 @@
 	transform: translateX(0);
 	opacity: 1;
 	z-index: 5;
+	visibility: visible;
 }
 
 .navbar_mobile_menu_backdrop {
@@ -86,4 +93,61 @@
 
 .no_scroll {
 	overflow-y: hidden;
+}
+.navbar_desktop {
+	display: none;
+	
+}
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 768px) {
+	.navbar_mobile {
+		display: none;
+	}
+	.navbar_logo {
+		color: var(--dark);
+	}
+	.navbar {
+		background-color: var(--light);
+		padding-inline: 1em;
+		padding-inline: 0;
+	}
+	.navbar_desktop {
+		display: block;
+		position: relative;
+	}
+	.navbar_container_desktop {
+		color: var(--light);
+	}
+
+	.navbar_desktop_top {
+		background-color: var(--dark);
+		color: var(--light);
+		display: flex;
+		justify-content: end;
+		padding: 10px 3em;
+	}
+	.navbar_desktop_bottom {
+		color: var(--dark);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 3em;
+	}
+
+	.auth_btn_container {
+		display: flex;
+		gap: 1em;
+	}
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+	.navbar_search_product_mobile{
+		display: flex;
+		justify-content: center;
+	}
+
+	
 }

@@ -1,0 +1,16 @@
+.home {
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+}
+
+/* Add responsiveness */
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}

@@ -1,0 +1,84 @@
+.shoe_card {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1em;
+	max-width: 230px;
+}
+
+.shoe_img_container {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.shoe_img_container img {
+	width: 100%;
+	object-fit: scale-down;
+}
+
+.shoe_description {
+	display: flex;
+	flex-direction: column;
+	font-size: small;
+	gap: 10px;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+	.shoe_card {
+		max-width: 200px;
+	}
+}
+
+.search {
+	color: var(--dark);
+	height: 100%;
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	padding: 15px 10px;
+}
+
+.search_logo_container {
+	text-align: center;
+}
+
+.search_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	font-size: 14px;
+}
+
+.search_searchbar {
+	all: unset;
+	border: 1px solid rgba(0, 0, 0, 0.217);
+	border-radius: 10px;
+	padding: 1px 10px;
+	height: 1.5em;
+}
+
+.search_results {
+	overflow-y: auto;
+	display: grid;
+	gap: 1em;
+}
+
+@media (min-width: 600px) {
+	.search_results {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 768px) {
+	.search_results {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 992px) {
+	.search_results {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}

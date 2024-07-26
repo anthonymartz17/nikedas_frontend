@@ -1,9 +1,11 @@
 import "./Nav.css";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import SearchProduct from "../Header/SearchProduct";
+import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
-
+import logoFullLight from "../../assets/logos_nikeda/nikedas_light.png";
+import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
 export default function Nav() {
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,9 +23,16 @@ export default function Nav() {
 
 	return (
 		<nav className="navbar">
-			<div className="navbar_container">
-				<Link to="/" className="navbar_logo">NIKEDAS</Link>
-				<div className="navbar_search_icon_menu_icon_container">
+			<div className="navbar_mobile">
+				<Link to="/" className="navbar_logo poppins-bold">
+					<img
+						className="nikedas_full_logo"
+						src={logoFullLight}
+						alt="nikedas_logo"
+					/>
+				</Link>
+
+				<div className="navbar_search_icon_menu_icon_container ">
 					<span
 						onClick={toggleSearch}
 						className="navbar_searchbar material-symbols-outlined"
@@ -36,6 +45,35 @@ export default function Nav() {
 					>
 						menu
 					</span>
+				</div>
+			</div>
+			<div className="navbar_desktop">
+				<div className="navbar_desktop_top">
+					<div className="auth_btn_container poppins-light ">
+						<Link to="/auth">Login</Link>
+						<Link to="/auth/signup">Join Us</Link>
+					</div>
+				</div>
+				<div className="navbar_desktop_bottom">
+					<Link to="/" className="navbar_logo poppins-bold">
+						<img
+							className="nikedas_full_logo"
+							src={logoFullDark}
+							alt="nikedas_logo"
+						/>
+					</Link>
+					<NavDesktop />
+					<input
+						onClick={() => toggleSearch()}
+						// disabled
+						style={{ width: "20%" }}
+						className="search_searchbar"
+						type="text"
+						placeholder="Search"
+					/>
+					<div className="shopping_cart">
+						<span className="material-symbols-outlined">local_mall</span>
+					</div>
 				</div>
 			</div>
 
