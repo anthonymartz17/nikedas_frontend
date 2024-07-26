@@ -2,7 +2,7 @@ import "./SearchProduct.css";
 import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
 
 import Shoes from "../../assets/shoes_db";
-import ShoeCard from "../Listings/ShoeCard";
+import ShoeCard from "../ShoesDisplay/ShoeCard";
 export default function SearchProduct({ onToggleSearch }) {
 	return (
 		<div className="search">

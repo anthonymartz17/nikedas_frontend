@@ -1,0 +1,15 @@
+.subcategories {
+	padding-inline: 1em;
+	background-color: red;
+	width: 50%;
+	height: 1em;
+}
+
+.subcategories_list {
+	gap: 10px;
+	white-space: nowrap;
+}
+
+.subcategories_list_item {
+	min-width: fit-content;
+}

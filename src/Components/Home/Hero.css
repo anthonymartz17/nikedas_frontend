@@ -68,12 +68,6 @@
 	.hero-buttons a {
 		width: 100%;
 	}
-	.hero_img_container {
-		margin-top: 1em;
-		display: flex;
-		justify-content: center;
-		align-items: end;
-	}
 }
 
 @media (min-width: 992px) {
@@ -84,6 +78,12 @@
 		align-items: center;
 		grid-template-columns: 1fr 1fr;
 		gap: 2em;
+	}
+	.hero_img_container {
+		margin-top: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: end;
 	}
 
 	.hero-text-block {

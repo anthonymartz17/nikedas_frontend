@@ -1,6 +1,6 @@
 .carousel {
 	width: 100vw;
-	height: 300px;
+	height: 50%;
 	background-color: var(--dark);
 	margin-block: 2em;
 	padding-block: 1em;
@@ -68,4 +68,15 @@
 
 .carousel_btn.right {
 	right: 0;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+	.carousel {
+
+		/* height: 500px; */
+	
+	}
 }
