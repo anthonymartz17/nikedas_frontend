@@ -22,7 +22,7 @@
 	display: flex;
 	overflow-x: auto;
 	scroll-behavior: smooth;
-	-ms-overflow-style: none;
+	/* -ms-overflow-style: none; */
 	scrollbar-width: none;
 	width: 100%;
 }
@@ -74,9 +74,7 @@
 }
 
 @media (min-width: 992px) {
-	.carousel {
-
-		/* height: 500px; */
-	
+	.carousel_img {
+	height: 30%;
 	}
 }

@@ -20,7 +20,7 @@ export default function Carousel({
 	}, [autoSlide, autoSlideInterval, next]);
 
 	return (
-		<div className=" relative mb-3">
+		<div className="relative mb-3">
 			<div
 				className="flex transition-transform ease-out duration-500"
 				style={{ transform: `translateX(-${curr * 100}%)` }}

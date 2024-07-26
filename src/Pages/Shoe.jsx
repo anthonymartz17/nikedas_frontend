@@ -1,7 +1,10 @@
-import React from 'react'
-
+import React from "react";
+import ShoeDetail from "../Components/ShoesDisplay/ShoeDetail";
+import "./Shoe.css";
 export default function Shoe() {
-  return (
-    <div>Shoe</div>
-  )
+	return (
+		<div className="shoe">
+			<ShoeDetail />
+		</div>
+	);
 }
