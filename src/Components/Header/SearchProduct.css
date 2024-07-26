@@ -53,6 +53,7 @@
 @media (min-width: 992px) {
 	.search {
 		width: 80%;
+		max-width: 992px;
 	}
 	.search_results {
 		font-size: small;

@@ -7,8 +7,10 @@ export default function ShoeCard({ shoe }) {
 				<img src={shoe.primary_img} alt="" />
 			</div>
 			<div className="shoe_description poppins-light">
-				<h5 className="poppins-semibold">{`${shoe.brand} ${shoe.model}`}</h5>
-				<p>{shoe.gender}'s shoe</p>
+				<div>
+					<h5 className="poppins-semibold">{`${shoe.brand} ${shoe.model}`}</h5>
+					<p>{shoe.gender}'s shoe</p>
+				</div>
 				<p>{shoe.description}</p>
 				<p className="poppins-semibold">${shoe.price}</p>
 			</div>

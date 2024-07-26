@@ -18,6 +18,7 @@
 .shoe_description {
 	display: flex;
 	flex-direction: column;
+	font-size: small;
 	gap: 10px;
 }
 

@@ -2,6 +2,7 @@
 	background-color: var(--dark);
 	height: 100%;
 	padding-inline: 1em;
+	
 }
 
 .navbar_mobile {
@@ -95,6 +96,7 @@
 }
 .navbar_desktop {
 	display: none;
+	
 }
 /* Medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -146,4 +148,6 @@
 		display: flex;
 		justify-content: center;
 	}
+
+	
 }
