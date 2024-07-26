@@ -21,6 +21,7 @@ import Profile from "./Pages/Profile.jsx";
 import NewListing from "./Pages/NewListing.jsx";
 import EditListing from "./Pages/EditListing.jsx";
 import ShoeListing from "./Pages/ShoeListing.jsx";
+import ShoesDisplay from "./Components/ShoesDisplay/ShoesDisplay.jsx";
 import Seller from "./Pages/Seller.jsx";
 import Store from "./Pages/Store.jsx";
 import AboutSeller from "./Pages/AboutSeller.jsx";
@@ -36,13 +37,14 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/auth" element={<Auth />} >
-              <Route path="" element={<Login />} />
-              <Route path="signup" element={<SignUp />} />
-              <Route path="forgot" element={<Forgot />} />
-            </Route>
+						<Route path="/auth" element={<Auth />}>
+							<Route path="" element={<Login />} />
+							<Route path="signup" element={<SignUp />} />
+							<Route path="forgot" element={<Forgot />} />
+						</Route>
 
 						<Route path="/shoes" element={<Shoes />}>
+							<Route path="" element={<ShoesDisplay />} />
 							<Route path=":id" element={<Shoe />} />
 						</Route>
 

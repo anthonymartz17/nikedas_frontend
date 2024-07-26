@@ -8,6 +8,7 @@
 	overflow-x: auto;
 	gap: 10px;
 	white-space: nowrap;
+
 }
 
 .subcategories_list_item {
@@ -23,7 +24,10 @@
 		border-bottom: 1px solid rgba(128, 128, 128, 0.364);
 	}
 	.subcategories_list {
+		scrollbar-width: none;
 		flex-direction: column;
+		height: fit-content;
+		padding: none;
 		gap: 1em;
 	}
 	.subcategories_list_item:hover {

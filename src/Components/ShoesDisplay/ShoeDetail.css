@@ -1,0 +1,111 @@
+.shoe_detail {
+	font-family: "poppins";
+	margin-block: 2em;
+	overflow-y: auto;
+}
+.shoe_description {
+	margin-bottom: 1em;
+	font-size: medium;
+}
+
+.shoe_display_collage_list {
+	display: flex;
+	gap: 0.1em;
+	margin-block: 0.5em;
+}
+
+.shoe_display_main {
+	width: 100%;
+	overflow: hidden;
+}
+.shoe_display_main img {
+	max-width: 100%;
+	object-fit: cover;
+}
+.shoe_sizes {
+	margin-block: 1em;
+	font-size: small;
+}
+.shoe_sizes_list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	margin-block: 1em;
+}
+.shoe_sizes_list_item button {
+	width: 2em;
+}
+
+.shoes_action_btn {
+	height: 10%;
+	margin-bottom: 5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.shoes_action_btn button {
+	width: 100%;
+	padding-block: 1rem;
+}
+
+@media (min-width: 992px) {
+	.shoe_detail {
+		display: grid;
+		grid-template-areas:
+			"display description"
+			"display size"
+			"display buttons";
+		grid-template-columns: 1fr 1fr;
+		gap: 1em;
+		width: 80%;
+		max-height: 768px;
+	}
+	.shoe_price {
+		margin-block: 1em;
+	}
+	.shoe_display {
+		grid-area: display;
+		display: grid;
+		grid-template-areas: "collage main";
+		grid-template-columns: 0.7fr 5fr;
+		gap: 1em;
+		height: 30em;
+	}
+	.shoe_display_collage {
+		grid-area: collage;
+	}
+	.shoe_display_main {
+		grid-area: main;
+	}
+	.shoe_display_main img {
+		grid-area: main;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 15px;
+	}
+	.shoe_display_collage_list {
+		flex-direction: column;
+		margin: 0;
+		gap: 1em;
+	}
+	.shoe_display_collage_list_item img {
+		border-radius: 5px;
+	}
+	.shoe_description {
+		grid-area: description;
+		margin: 0;
+	}
+	.shoe_sizes {
+		margin: 0;
+		grid-area: size;
+		margin-bottom: 2em;
+	}
+
+	.shoes_action_btn {
+		grid-area: buttons;
+	}
+
+	.shoes_action_btn button {
+		width: 90%;
+	}
+}

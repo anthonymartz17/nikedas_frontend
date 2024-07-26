@@ -96,7 +96,7 @@ export default [
 		stock: 3,
 	},
 	{
-		id: 1,
+		id: 6,
 		brand: "Nike",
 		model: "Air Jordan 1",
 		size: 9,
@@ -120,7 +120,7 @@ export default [
 		stock: 2,
 	},
 	{
-		id: 2,
+		id: 7,
 		brand: "Nike",
 		model: "Air Jordan 1",
 		primary_img:
@@ -138,7 +138,7 @@ export default [
 		stock: 4,
 	},
 	{
-		id: 3,
+		id: 8,
 		brand: "Adidas",
 		model: "UltraBoost",
 		primary_img:
@@ -156,7 +156,7 @@ export default [
 		stock: 4,
 	},
 	{
-		id: 4,
+		id: 9,
 		brand: "Adidas",
 		model: "UltraBoost",
 		primary_img:
@@ -174,7 +174,7 @@ export default [
 		stock: 7,
 	},
 	{
-		id: 5,
+		id: 10,
 		brand: "Puma",
 		model: "Suede Classic",
 		primary_img:
@@ -192,7 +192,7 @@ export default [
 		stock: 3,
 	},
 	{
-		id: 1,
+		id: 11,
 		brand: "Nike",
 		model: "Air Jordan 1",
 		size: 9,
@@ -216,7 +216,7 @@ export default [
 		stock: 2,
 	},
 	{
-		id: 2,
+		id: 12,
 		brand: "Nike",
 		model: "Air Jordan 1",
 		primary_img:
@@ -234,7 +234,7 @@ export default [
 		stock: 4,
 	},
 	{
-		id: 3,
+		id: 13,
 		brand: "Adidas",
 		model: "UltraBoost",
 		primary_img:
@@ -252,7 +252,7 @@ export default [
 		stock: 4,
 	},
 	{
-		id: 4,
+		id: 14,
 		brand: "Adidas",
 		model: "UltraBoost",
 		primary_img:
@@ -270,7 +270,7 @@ export default [
 		stock: 7,
 	},
 	{
-		id: 5,
+		id: 15,
 		brand: "Puma",
 		model: "Suede Classic",
 		primary_img:
@@ -288,7 +288,7 @@ export default [
 		stock: 3,
 	},
 	{
-		id: 1,
+		id: 16,
 		brand: "Nike",
 		model: "Air Jordan 1",
 		size: 9,
@@ -312,7 +312,7 @@ export default [
 		stock: 2,
 	},
 	{
-		id: 2,
+		id: 17,
 		brand: "Nike",
 		model: "Air Jordan 1",
 		primary_img:
@@ -330,7 +330,7 @@ export default [
 		stock: 4,
 	},
 	{
-		id: 3,
+		id: 18,
 		brand: "Adidas",
 		model: "UltraBoost",
 		primary_img:
@@ -348,7 +348,7 @@ export default [
 		stock: 4,
 	},
 	{
-		id: 4,
+		id: 19,
 		brand: "Adidas",
 		model: "UltraBoost",
 		primary_img:
@@ -366,7 +366,7 @@ export default [
 		stock: 7,
 	},
 	{
-		id: 5,
+		id: 20,
 		brand: "Puma",
 		model: "Suede Classic",
 		primary_img:

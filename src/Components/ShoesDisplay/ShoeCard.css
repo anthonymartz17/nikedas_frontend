@@ -4,6 +4,11 @@
 	margin-bottom: 1em;
 	max-width: 230px;
 }
+.shoe_card_link {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
 
 .shoe_img_container {
 	width: 100%;
