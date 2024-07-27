@@ -19,7 +19,7 @@ export default function LoginForm() {
   }
 
   return (
-    <section className="auth">
+    <section className="auth global_card">
 
       <h3 className="auth-heading">Welcome back!</h3>
       
@@ -47,7 +47,7 @@ export default function LoginForm() {
         
         <Link to="/auth/forgot" className="forgot_password">Forgot Password?</Link>
         
-        <button type="submit">Sign in</button>
+        <button className='btn btn_bg_dark' type="submit">Sign in</button>
       </form>
 
       <Link to="signup" className="create_account">Create an account</Link>
