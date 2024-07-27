@@ -1,7 +1,10 @@
-import React from 'react'
+import ListingForm from '../Components/Account/ListingForm'
 
 export default function EditListing() {
+
   return (
-    <div>EditListing</div>
+    <div>
+      <ListingForm formHeader="Edit Listing"/>
+    </div>
   )
 }

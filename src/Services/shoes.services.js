@@ -19,3 +19,37 @@ export async function fetchShoeById(id) {
 		throw error;
 	}
 }
+
+export async function createShoe(listing) {
+  try {
+    const options = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(listing)
+    };
+
+    const res = await fetch(`${NIKEDAS_API}`, options);
+    const shoe = await res.json();
+    return shoe;
+  
+  } catch(error) {
+      throw error
+  }
+}
+
+export async function updateShoe(id, listing) {
+  try {
+    const options = {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(listing)
+    };
+
+    const res = await fetch(`${NIKEDAS_API}/${id}`, options);
+    const shoe = await res.json();
+    return shoe;
+  
+  } catch(error) {
+      throw error
+  }
+}
