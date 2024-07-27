@@ -1,5 +1,6 @@
 import "./ListingForm.css"
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import Input from "./Input.jsx"
 
@@ -12,15 +13,15 @@ export default function ListingForm({
     brand: "",
     model: "",
     size: null,
-    SKU: null,
     color: "",
-    category: "",
     gender: "",
+    category: "",
     price: null,
+    product_number: "",
+    SKU: null,
     description: "",
-    created_at: "",
-    updated_at: "",
-    img_url: null,
+    primary_img: "",
+    secondary_img: [],
     seller_id: user_id
   })
   const [ formDisplay, setFormDisplay ] = useState({
@@ -84,7 +85,7 @@ export default function ListingForm({
             <label>Size:
               <input
                 type="number"
-                placeholder="size"
+                placeholder="Size"
                 value={listingForm.size}
                 onChange={handleChange}
                 id="size"
@@ -94,13 +95,13 @@ export default function ListingForm({
           </div>
 
           <div className="flex_item">
-          <label>SKU:
+          <label>Color:
               <input
-                type="number"
-                placeholder="sku"
-                value={listingForm.SKU}
+                type="text"
+                placeholder="Color"
+                value={listingForm.color}
                 onChange={handleChange}
-                id="sku"
+                id="color"
                 required
               />
             </label>
@@ -109,15 +110,19 @@ export default function ListingForm({
             
         <div className="flex_row">
           <div className="flex_item">
-          <label>Color:
-              <input
+          <label>Gender:<br />
+              <select
                 type="text"
-                placeholder="color"
-                value={listingForm.color}
+                value={listingForm.gender}
                 onChange={handleChange}
-                id="color"
+                id="gender"
                 required
-              />
+              >
+                <option value="">-- Choose an option --</option>
+                <option value="mens">Men's</option>
+                <option value="womens">Women's</option>
+                <option value="kids">Kid's</option>
+              </select>
             </label>
           </div>
 
@@ -125,7 +130,7 @@ export default function ListingForm({
             <label>Category:
               <input
                 type="text"
-                placeholder="category"
+                placeholder="Category"
                 value={listingForm.category}
                 onChange={handleChange}
                 id="category"
@@ -136,10 +141,38 @@ export default function ListingForm({
           </div>
         </div>
 
+        <div className="flex_row">
+          <div className="flex_item">
+          <label>Product #:
+              <input
+                type="text"
+                placeholder="Product ID"
+                value={listingForm.color}
+                onChange={handleChange}
+                id="color"
+                required
+              />
+            </label>
+          </div>
+
+          <div className="flex_item">
+            <label>SKU:
+                <input
+                  type="number"
+                  placeholder="sku"
+                  value={listingForm.SKU}
+                  onChange={handleChange}
+                  id="sku"
+                  required
+                />
+            </label>
+          </div>
+        </div>
+
         <label className="description">Description:<br/>
           <textarea
             type="textarea"
-            placeholder="description"
+            placeholder="Description"
             value={listingForm.description}
             onChange={handleChange}
             id="description"
@@ -149,9 +182,50 @@ export default function ListingForm({
         </label>
 
         <div className="flex_row">
+          <div className="flex_item">
+          <label>Primary Img URL:
+              <input
+                type="text"
+                placeholder="http://www.someplaceonthenet.com/img.jpg"
+                value={listingForm.primary_img}
+                onChange={handleChange}
+                id="primaryImg"
+                required
+              />
+            </label>
+          </div>
+
+          <div className="flex_item">
+            <label>Secondary Images URL(s):
+                <input
+                  type="text"
+                  placeholder="img urls separated by commas"
+                  value={listingForm.secondary_img}
+                  onChange={handleChange}
+                  id="secondaryImgs"
+                />
+            </label>
+          </div>
+        </div>
+
+        <div className="flex_row">
+          <div className="flex_item">
+            <label>Price:
+                <input
+                  type="number"
+                  placeholder="150.00"
+                  value={listingForm.price}
+                  onChange={handleChange}
+                  id="price"
+                />
+            </label>
+          </div>
+        </div>
+
+        <div className="flex_row">
           <div className="form_button flex_item">
-            <button
-            >Cancel</button>
+            <Link to="/account"> <button
+            >Cancel</button></Link>
           </div>
           <div className="form_button flex_item">
             <button 
