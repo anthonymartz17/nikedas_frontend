@@ -4,8 +4,8 @@ import ListingForm from '../Components/Account/ListingForm'
 
 export default function NewListing() {
   return (
-    <div>
-      <ListingForm />
-    </div>
+    <section className="new_listing_page">
+      <ListingForm formHeader="Create Listing" />
+    </section>
   )
 }

@@ -5,13 +5,15 @@ import Input from "./Input.jsx"
 
 const user_id = 2;
 
-export default function ListingForm() {
+export default function ListingForm({
+  formHeader
+}) {
   const [ listingForm, setListingForm ] = useState({
     brand: "",
     model: "",
     size: null,
     SKU: null,
-    color: "Black/White",
+    color: "",
     category: "",
     gender: "",
     price: null,
@@ -21,7 +23,7 @@ export default function ListingForm() {
     img_url: null,
     seller_id: user_id
   })
-  const [ formDisplay, setforDisplay ] = useState({
+  const [ formDisplay, setFormDisplay ] = useState({
     brand: "",
     model: "",
     size: 0,
@@ -36,18 +38,18 @@ export default function ListingForm() {
 
   function handleChange(e) {
     const value = e.target.value;
-    setLoginForm({...loginForm, [e.target.id]:e.target.value});
+    setListingForm({...listingForm, [e.target.id]:e.target.value});
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginForm)
+    console.log(listingForm)
   }
 
   return (
-    <div>
-      <h2>Listing Form</h2>
-      <form className="listing_form">
+    <div className="form_page">
+      <h2 className="form_header">{formHeader}</h2>
+      <form className="listing_form" onSubmit={handleSubmit}>
 
         <div className="flex_row">
           <div className="flex_item">
@@ -145,9 +147,17 @@ export default function ListingForm() {
             style={{width: "100%"}}
             />
         </label>
-        <button
-        >Create Listing</button>
 
+        <div className="flex_row">
+          <div className="form_button flex_item">
+            <button
+            >Cancel</button>
+          </div>
+          <div className="form_button flex_item">
+            <button 
+            >Create Listing</button>
+          </div>
+        </div>
       </form>
     </div>
   )
