@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+.listing_form input, .listing_form select, .listing_form textarea
+ {
+  border: 1px solid gray;
+}
+
 .flex_row {
   flex: 100%;
   display: flex;
