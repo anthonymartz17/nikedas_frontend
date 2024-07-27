@@ -8,7 +8,6 @@ export async function fetchAllShoes() {
 	} catch (error) {
 		throw error;
 	}
-
 }
 
 export async function fetchShoeById(id) {

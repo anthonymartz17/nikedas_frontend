@@ -26,6 +26,7 @@ import Seller from "./Pages/Seller.jsx";
 import Store from "./Pages/Store.jsx";
 import AboutSeller from "./Pages/AboutSeller.jsx";
 import NotFound from "./Pages/NotFound.jsx";
+import AccountDashboard from "./Components/Account/AccountDashboard.jsx"
 
 function App() {
 	return (
@@ -49,7 +50,7 @@ function App() {
 						</Route>
 
 						<Route path="/account" element={<Account />}>
-							<Route path="" element={<Account />} />
+							<Route path="" element={<AccountDashboard />} />
 							<Route path="profile" element={<Profile />} />
 							<Route path="listing/new" element={<NewListing />} />
 							<Route path="listing/:id/edit" element={<EditListing />} />

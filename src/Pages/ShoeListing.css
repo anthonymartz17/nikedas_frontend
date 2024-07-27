@@ -1,0 +1,24 @@
+.shoeListing {
+	height: 100vh;
+	width: 100%;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+	padding: 1em;
+}
+
+/* Add responsiveness */
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+	.shoeListing {
+		justify-content: center;
+	}
+
+	.shoeListing_back_btn {
+		width: 80%;
+	}
+}
