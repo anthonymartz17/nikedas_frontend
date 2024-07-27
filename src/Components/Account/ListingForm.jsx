@@ -236,6 +236,25 @@ export default function ListingForm({
 
         <div className="flex_row">
           <div className="flex_item">
+            <label>Primary Img Preview:
+              <img src={listingForm.primary_img}
+              />
+            </label>
+          </div>
+
+          <div className="flex_item">
+            <label>Secondary Images Previews:
+              <div className="secondary_img_preview">
+                {listingForm.secondary_img.map(url => (
+                  <img src={url} key={url}/>
+                ))}
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div className="flex_row">
+          <div className="flex_item">
             <label>Price:
                 <input
                   type="number"
