@@ -1,6 +1,9 @@
 import "./ListingForm.css"
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+
+// services
+import { createShoe, fetchShoeById, updateShoe } from "../../Services/shoes.services.js"
 
 import Input from "./Input.jsx"
 
@@ -12,39 +15,62 @@ export default function ListingForm({
   const [ listingForm, setListingForm ] = useState({
     brand: "",
     model: "",
-    size: null,
+    size: 0,
     color: "",
     gender: "",
     category: "",
-    price: null,
+    price: 0,
     product_number: "",
-    SKU: null,
+    sku: 0,
     description: "",
     primary_img: "",
     secondary_img: [],
     seller_id: user_id
   })
-  const [ formDisplay, setFormDisplay ] = useState({
-    brand: "",
-    model: "",
-    size: 0,
-    SKU: 0,
-    color: "Black/White",
-    category: "",
-    gender: "",
-    price: 0,
-    description: "",
-    img_url: "",
-  })
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  async function getListing(id) {
+    const listing = await fetchShoeById(id);
+    setListingForm(listing)
+  }
+
+  useEffect(() =>{
+    if (id) {
+      try {
+        getListing(id)
+      } catch (error) {
+          throw error;
+      }
+    }
+  },[id])
+
 
   function handleChange(e) {
     const value = e.target.value;
     setListingForm({...listingForm, [e.target.id]:e.target.value});
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(listingForm)
+
+    const size = listingForm.size
+    const sizeToFloat = parseFloat(size)
+
+    if (id) {
+      try {
+        const res = await updateShoe(id, {...listingForm, size: sizeToFloat})
+        navigate(`/account/listing/${id}`)
+      } catch (error) {
+          throw error
+      }
+    } else {
+        try {
+          const res = await createShoe({...listingForm, size: sizeToFloat})
+        } catch(error) {
+            throw error
+        }
+    }
   }
 
   return (
@@ -98,7 +124,7 @@ export default function ListingForm({
           <label>Color:
               <input
                 type="text"
-                placeholder="Color"
+                placeholder="color"
                 value={listingForm.color}
                 onChange={handleChange}
                 id="color"
@@ -146,10 +172,10 @@ export default function ListingForm({
           <label>Product #:
               <input
                 type="text"
-                placeholder="Product ID"
-                value={listingForm.color}
+                placeholder="Product #"
+                value={listingForm.product_number}
                 onChange={handleChange}
-                id="color"
+                id="product_number"
                 required
               />
             </label>
@@ -160,7 +186,7 @@ export default function ListingForm({
                 <input
                   type="number"
                   placeholder="sku"
-                  value={listingForm.SKU}
+                  value={listingForm.sku}
                   onChange={handleChange}
                   id="sku"
                   required
@@ -189,7 +215,7 @@ export default function ListingForm({
                 placeholder="http://www.someplaceonthenet.com/img.jpg"
                 value={listingForm.primary_img}
                 onChange={handleChange}
-                id="primaryImg"
+                id="primary_img"
                 required
               />
             </label>
@@ -202,7 +228,7 @@ export default function ListingForm({
                   placeholder="img urls separated by commas"
                   value={listingForm.secondary_img}
                   onChange={handleChange}
-                  id="secondaryImgs"
+                  id="secondary_img"
                 />
             </label>
           </div>
@@ -229,7 +255,7 @@ export default function ListingForm({
           </div>
           <div className="form_button flex_item">
             <button className="btn_bg_dark"
-            >Create Listing</button>
+            >{id ? "Update" : "Create"} Listing</button>
           </div>
         </div>
       </form>
