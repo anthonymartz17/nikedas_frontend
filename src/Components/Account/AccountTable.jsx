@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AccountTable.css";
-import listings from "../../assets/shoes_db";
+import { Link } from "react-router-dom";
+import { fetchAllShoes } from "../../Services/shoes.services";
 
 export default function AccountTable() {
 	const [isDropdownOpen, setDropdownOpen] = useState(false);
 	const [isModalOpen, setModalOpen] = useState(false);
+	const [listings, setListings] = useState([]);
 
 	const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
 	const openModal = () => setModalOpen(true);
 	const closeModal = () => setModalOpen(false);
+
+	//temp logic until auth is worked on
+	async function getSellerListings() {
+		try {
+			const shoesData = await fetchAllShoes();
+			setListings(shoesData);
+		} catch (error) {}
+	}
+
+	useEffect(() => {
+		getSellerListings();
+	}, []);
 
 	return (
 		<div class="relative overflow-x-auto shadow-md sm:rounded-lg poppins-regular">
@@ -151,7 +165,10 @@ export default function AccountTable() {
 				</thead>
 				<tbody>
 					{listings.map((listing) => (
-						<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+						<tr
+							key={listing.id}
+							class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+						>
 							<td class="w-4 p-4">
 								<div class="flex items-center">
 									<input
@@ -181,12 +198,17 @@ export default function AccountTable() {
 							<td class="px-6 py-4 text-wrap">{listing.color}</td>
 							<td class="px-6 py-4 text-wrap">${listing.price}</td>
 							<td class="px-6 py-4 text-wrap flex gap-2">
-								<span class="material-symbols-outlined cursor-pointer hover:text-white">
-									visibility
-								</span>
-								<span class="material-symbols-outlined cursor-pointer hover:text-white">
-									edit_square
-								</span>
+								<Link to={`listing/${listing.id}`}>
+									<span class="material-symbols-outlined cursor-pointer hover:text-white">
+										visibility
+									</span>
+								</Link>
+								<Link to={`listing/${listing.id}/edit`}>
+									<span class="material-symbols-outlined cursor-pointer hover:text-white">
+										edit_square
+									</span>
+								</Link>
+
 								<span class="material-symbols-outlined cursor-pointer hover:text-white">
 									delete
 								</span>
