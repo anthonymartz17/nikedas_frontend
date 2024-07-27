@@ -13,13 +13,12 @@ export default function SellerStore() {
   const { id } = useParams();
 
   useEffect(() =>{
-    console.log("fetch shoes");
     const sellerListings = shoes.filter(({ seller_id }) => seller_id === +id);
     setSellerStore(sellerListings);
 
   }, []);
 
-  console.log(sellerStore)
+
 
   return (
     <div>

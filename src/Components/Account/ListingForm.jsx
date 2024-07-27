@@ -28,7 +28,6 @@ export default function CreateListing() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginForm)
   }
 
   return (

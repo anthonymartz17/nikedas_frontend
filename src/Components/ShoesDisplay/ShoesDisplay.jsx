@@ -1,19 +1,33 @@
-import React from "react";
-import shoeList from "../../assets/shoes_db";
+import React, { useEffect } from "react";
 import ShoeCard from "../ShoesDisplay/ShoeCard";
 import "./ShoesDisplay.css";
 import { useState } from "react";
 import Subcategories from "../ShoesDisplay/Subcategories";
 import ShoeFilters from "../ShoesDisplay/ShoeFilters";
 import Accordion from "../UI/Accordion";
+import { fetchAllShoes } from "../../Services/shoes.services";
 
 export default function Shoes() {
+	const [shoesList, setShoesList] = useState([]);
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 
 	function toggleFilter() {
 		setIsFilterOpen((prev) => !prev);
 		document.body.classList.toggle("no_scroll");
 	}
+
+	async function getAllShoes() {
+		try {
+			const shoesData = await fetchAllShoes();
+			setShoesList(shoesData);
+		} catch (error) {
+			//handle error
+		}
+	}
+
+	useEffect(() => {
+		getAllShoes();
+	}, []);
 
 	return (
 		<div className="shoes">
@@ -32,7 +46,7 @@ export default function Shoes() {
 			</div>
 
 			<div className="shoes_display_area">
-				{shoeList.map((shoe) => (
+				{shoesList.map((shoe) => (
 					<ShoeCard shoe={shoe} key={shoe.id} />
 				))}
 			</div>

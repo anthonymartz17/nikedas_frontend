@@ -16,7 +16,7 @@ export default function ForgotForm() {
 
   function handleSubmit (e) {
     e.preventDefault();
-    console.log(forgotForm);
+
   }
 
   return (
