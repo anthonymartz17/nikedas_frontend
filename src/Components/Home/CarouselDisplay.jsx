@@ -13,7 +13,7 @@ export default function CarouselDisplay() {
 	return (
 		<div className="carousel">
 			<h3 className="carousel_subtitle poppins-bold">New Arrivals</h3>
-			<Carousel autoSlide={true} autoSlideInterval={3000}>
+			<Carousel autoSlide={false} autoSlideInterval={3000}>
 				{carouselImages.map((img, idx) => (
 					<img
 						key={idx}
