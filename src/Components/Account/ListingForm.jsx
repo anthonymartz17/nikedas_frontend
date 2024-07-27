@@ -224,11 +224,11 @@ export default function ListingForm({
 
         <div className="flex_row">
           <div className="form_button flex_item">
-            <Link to="/account"> <button
+             <Link to="/account"><button className="btn_bg_dark"
             >Cancel</button></Link>
           </div>
           <div className="form_button flex_item">
-            <button 
+            <button className="btn_bg_dark"
             >Create Listing</button>
           </div>
         </div>
