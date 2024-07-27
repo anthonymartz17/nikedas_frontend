@@ -9,3 +9,13 @@ export async function fetchAllShoes() {
 		throw error;
 	}
 }
+
+export async function fetchShoeById(id) {
+	try {
+		const res = await fetch(`${NIKEDAS_API}/${id}`);
+		const shoe = await res.json();
+		return shoe;
+	} catch (error) {
+		throw error;
+	}
+}
