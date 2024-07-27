@@ -1,0 +1,6 @@
+.dashboard {
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+  padding-top: 5%;
+}
