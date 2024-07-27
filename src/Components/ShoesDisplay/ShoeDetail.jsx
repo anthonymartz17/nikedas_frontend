@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ShoeDetail.css";
-import shoesList from "../../assets/shoes_db";
 import { capitalizeFirstLetters } from "../../Utils/strings.utils";
+import { fetchShoeById } from "../../Services/shoes.services";
 
 const shoeSizes = [
 	"5",
@@ -28,26 +28,32 @@ const shoeSizes = [
 
 export default function ShoeDetail() {
 	const { id } = useParams();
-
 	const [shoe, setShoe] = useState(null);
 	const [currentImg, setCurrentImg] = useState("");
 	const [shoeBrandModel, setShoeBrandModel] = useState("");
 	const [shoeDescription, setShoeDescription] = useState("");
-
-	useEffect(() => {
-		const selectedShoe = shoesList[id];
-		if (selectedShoe) {
-			setShoe(selectedShoe);
-			setCurrentImg(selectedShoe.primary_img);
-			setShoeBrandModel(
-				capitalizeFirstLetters(`${selectedShoe.brand} ${selectedShoe.model}`)
-			);
-			setShoeDescription(
-				capitalizeFirstLetters(
-					`${selectedShoe.gender}'s ${selectedShoe.description}`
-				)
-			);
+	async function setShoeInfo(id) {
+		try {
+			const selectedShoe = await fetchShoeById(id);
+			if (selectedShoe) {
+				setShoe(selectedShoe);
+				setCurrentImg(selectedShoe.primary_img);
+				setShoeBrandModel(
+					capitalizeFirstLetters(`${selectedShoe.brand} ${selectedShoe.model}`)
+				);
+				setShoeDescription(
+					capitalizeFirstLetters(
+						`${selectedShoe.gender}'s ${selectedShoe.description}`
+					)
+				);
+			}
+		} catch (error) {
+			//handle error properly
+			throw error;
 		}
+	}
+	useEffect(() => {
+		setShoeInfo(id);
 	}, [id]);
 
 	if (!shoe) return <div>Loading...</div>;

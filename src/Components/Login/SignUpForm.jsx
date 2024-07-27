@@ -20,7 +20,7 @@ export default function SignUp() {
   }
 
   return (
-    <section className="auth">
+    <section className="auth card">
 
       <h3 className="auth-heading">Create an account!</h3>
       
@@ -28,6 +28,7 @@ export default function SignUp() {
         
         <label></label>
         <input
+          className='global_input_field'
           type="text"
           placeholder="Email*"
           value={signUpForm.email}

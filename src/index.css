@@ -33,6 +33,16 @@ a {
 	font-family: "Poppins", sans-serif;
 	/* width: 100%; */
 }
+
+.global_card {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.global_input_field {
+	border: 1px solid rgba(128, 128, 128, 0.468);
+	padding-inline: 0.5em;
+}
+
 .btn_bg_light {
 	background-color: var(--light);
 	color: var(--dark);
