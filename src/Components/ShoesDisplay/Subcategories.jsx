@@ -24,7 +24,7 @@ import "./Subcategories.css"
 // Remove duplicates using Set
 const uniqueShoeCategories = [...new Set(shoeCategories)];
 
-console.log(uniqueShoeCategories);
+
 
 export default function Subcategories() {
 	return (

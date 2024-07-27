@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./ShoeDetail.css";
 import shoesList from "../../assets/shoes_db";
 import { capitalizeFirstLetters } from "../../Utils/strings.utils";
 
-const shoe = shoesList[0];
 const shoeSizes = [
 	"5",
 	"5.5",
@@ -27,10 +27,31 @@ const shoeSizes = [
 ];
 
 export default function ShoeDetail() {
-	const shoeBrandModel = capitalizeFirstLetters(`${shoe.brand} ${shoe.model}`);
-	const shoeDescription = capitalizeFirstLetters(
-		`${shoe.gender}'s ${shoe.description}`
-	);
+	const { id } = useParams();
+
+	const [shoe, setShoe] = useState(null);
+	const [currentImg, setCurrentImg] = useState("");
+	const [shoeBrandModel, setShoeBrandModel] = useState("");
+	const [shoeDescription, setShoeDescription] = useState("");
+
+	useEffect(() => {
+		const selectedShoe = shoesList[id];
+		if (selectedShoe) {
+			setShoe(selectedShoe);
+			setCurrentImg(selectedShoe.primary_img);
+			setShoeBrandModel(
+				capitalizeFirstLetters(`${selectedShoe.brand} ${selectedShoe.model}`)
+			);
+			setShoeDescription(
+				capitalizeFirstLetters(
+					`${selectedShoe.gender}'s ${selectedShoe.description}`
+				)
+			);
+		}
+	}, [id]);
+
+	if (!shoe) return <div>Loading...</div>;
+
 	return (
 		<div className="shoe_detail">
 			<div className="shoe_description">
@@ -42,12 +63,16 @@ export default function ShoeDetail() {
 			</div>
 			<div className="shoe_display">
 				<div className="shoe_display_main">
-					<img src={shoe.primary_img} alt={`photo of ${shoe.brand} shoe`} />
+					<img src={currentImg} alt={`photo of ${shoe.brand} shoe`} />
 				</div>
 				<div className="shoe_display_collage">
 					<ul className="shoe_display_collage_list">
 						{shoe.secondary_img.map((img, idx) => (
-							<li className="shoe_display_collage_list_item" key={idx}>
+							<li
+								onClick={() => setCurrentImg(img)}
+								className="shoe_display_collage_list_item cur"
+								key={idx}
+							>
 								<img src={img} alt={`photo of ${shoe.brand} shoe`} />
 							</li>
 						))}
@@ -55,7 +80,7 @@ export default function ShoeDetail() {
 				</div>
 			</div>
 			<div className="shoe_sizes">
-				<p className=" poppins-semibold">Select Size</p>
+				<p className="poppins-semibold">Select Size</p>
 				<ul className="shoe_sizes_list">
 					{shoeSizes.map((size, idx) => (
 						<li className="shoe_sizes_list_item" key={idx}>
