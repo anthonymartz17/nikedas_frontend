@@ -15,6 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  row-gap: 30px;;
 }
 
 .listing_form * {
@@ -33,13 +34,20 @@
   flex: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
 .flex_item {
   min-width: 100px;
   flex: 100%;
   /* display: inline-block; */
+}
+
+.listing_form input, .listing_form select, .listing_form textarea
+ {
+  border: 1px solid gray;
+  border-radius: 50px;
+  text-indent: 20px;
 }
 
 select {
@@ -51,21 +59,13 @@ select {
   flex: 100%
 }
 
-.secondary_img_preview {
-  display:flex;
-  flex-wrap: wrap;
-}
-
-.secondary_img_preview * {
-  width: 50%;
-}
-
 .form_button {
   flex: 100%;
+  text-indent: 0;
 }
 
 div button {
-  width: 100%
+  width: 100%;
 }
 
 /* mobile to desktop */
