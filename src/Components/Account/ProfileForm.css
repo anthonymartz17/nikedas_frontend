@@ -10,3 +10,18 @@
 #email {
   color: rgb(189, 187, 187);
 }
+
+.flex_item textarea {
+  width: 100%;
+  padding-top: 10px;;
+}
+
+.checkbox_row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkbox_row label{
+  text-align: center;
+}

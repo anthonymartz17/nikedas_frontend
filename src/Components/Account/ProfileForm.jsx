@@ -15,7 +15,7 @@ export default function ProfileForm({
     email: "",
     phone_number: "",
     about_store: "",
-    isActive: "",
+    is_active: "",
   })
 
   // id from session token
@@ -37,8 +37,13 @@ export default function ProfileForm({
 
 
   function handleChange(e) {
-    const value = e.target.value;
-    setListingForm({...profileForm, [e.target.id]:e.target.value});
+    let value = e.target.value;
+
+    if (e.target.id === "is_active") {
+      value = e.target.checked;
+    }
+
+    setProfileForm({...profileForm, [e.target.id]:value});
   }
 
   async function handleSubmit(e) {
@@ -119,7 +124,31 @@ export default function ProfileForm({
           </label>
         </div>
 
-        
+        <div className="flex_item">
+          <label>About Store:<br/>
+            <textarea
+              type="text"
+              placeholder="Hype up your store."
+              value={profileForm.about_store}
+              onChange={handleChange}
+              id="about_store"
+            />
+          </label>
+        </div>
+
+        <div className="flex_row">
+          <div className="flex_item checkbox_row">
+            <label for="is_active">Active:</label>
+              <input
+                name="is_active"
+                type="checkbox"
+                // value={profileForm.is_active}
+                checked={profileForm.is_active}
+                onChange={handleChange}
+                id="is_active"
+              />
+          </div>
+        </div>
 
         <div className="flex_row">
           <div className="form_button flex_item">
