@@ -4,9 +4,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
 // services
-// import { fetchUserById, updateUser } from "../../Services/shoes.services.js"
-
-const user_id = 2;
+import { fetchUserById } from "../../Services/users.services.js"
 
 export default function ProfileForm({
   formHeader
@@ -21,23 +19,21 @@ export default function ProfileForm({
   })
 
   // id from session token
-  const { id } = useParams();
+  const user_id = 2;
 
   
-  // async function getListing(id) {
-  //   const listing = await fetchShoeById(id);
-  //   setListingForm(listing)
-  // }
+  async function getUser(user_id) {
+    const user = await fetchUserById(user_id);
+    setProfileForm(user)
+  }
 
-  // useEffect(() =>{
-  //   if (id) {
-  //     try {
-  //       getListing(id)
-  //     } catch (error) {
-  //         throw error;
-  //     }
-  //   }
-  // },[id])
+  useEffect(() =>{
+    try {
+      getUser(user_id)
+    } catch (error) {
+        throw error;
+    }
+  },[user_id])
 
 
   function handleChange(e) {
@@ -73,12 +69,12 @@ export default function ProfileForm({
       <form className="listing_form profile_form" onSubmit={handleSubmit}>
 
         <div className="flex_item">
-          <label>Email:
+          <label>Email: (You cannot update email)
             <input
               type="text"
               placeholder="Email"
               value={profileForm.email}
-              id="last_name"
+              id="email"
               disabled
             />
           </label>

@@ -6,3 +6,7 @@
 .profile_form * {
   flex: 100%;
 }
+
+#email {
+  color: rgb(189, 187, 187);
+}
