@@ -7,8 +7,13 @@
 .navbar_mobile_menu_header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	color: var(--light);
 	padding: 1em;
+}
+.navbar_mobile_menu_back {
+	display: flex;
+	align-items: center;
 }
 .links {
 	color: var(--light);
