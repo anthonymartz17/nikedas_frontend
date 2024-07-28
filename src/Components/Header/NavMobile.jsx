@@ -5,7 +5,7 @@ import categories from "./navigation";
 import { useAuth } from "../../Context/AuthContext";
 export default function NavMobile({ onToggleMenu }) {
 	const { currentUser } = useAuth();
-	console.log(currentUser,'hay?')
+
 	return (
 		<div className="nav_mobile poppins-light">
 			<div className="navbar_mobile_menu_header justify-end">
