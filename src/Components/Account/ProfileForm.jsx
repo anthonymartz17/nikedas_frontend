@@ -3,6 +3,9 @@ import "./ListingForm.css"
 import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
+// firebase
+import { useAuth } from "../../Context/AuthContext.jsx"
+
 // services
 import { fetchUserById, updateUser } from "../../Services/users.services.js"
 
@@ -32,7 +35,8 @@ export default function ProfileForm({
     setShowAlert(false)
   }
 
-  // id from session token
+  // config auth
+  const  { currentUser } = useAuth();
   const user_id = 2;
 
   // get user profile
