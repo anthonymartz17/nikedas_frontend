@@ -1,14 +1,16 @@
 import "./NavMobile.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 import categories from "./navigation";
-
+import { useAuth } from "../../Context/AuthContext";
 export default function NavMobile({ onToggleMenu }) {
+	const { currentUser } = useAuth();
+
 	return (
 		<div className="nav_mobile poppins-light">
-			<div className="navbar_mobile_menu_header">
-				<span className="navbar_mobile_menu_back">back</span>
-				<span onClick={onToggleMenu} className="material-symbols-outlined">
+			<div className="navbar_mobile_menu_header justify-end">
+				{/* <span className="navbar_mobile_menu_back">back</span> */}
+				<span onClick={onToggleMenu} className="material-symbols-outlined ">
 					close
 				</span>
 			</div>
@@ -25,9 +27,20 @@ export default function NavMobile({ onToggleMenu }) {
 				</ul>
 			</div>
 			<div className="navbar_footer">
-				<Link to="/auth/signup" className="btn btn_bg_light" onClick={() => onToggleMenu()}>Join Us</Link>
-        <Link to="/auth" className="btn btn_mute_light" onClick={() => onToggleMenu()}>Log In</Link>
-
+				<Link
+					to="/auth/signup"
+					className="btn btn_bg_light"
+					onClick={() => onToggleMenu()}
+				>
+					Join Us
+				</Link>
+				<Link
+					to="/auth"
+					className="btn btn_mute_light"
+					onClick={() => onToggleMenu()}
+				>
+					Log In
+				</Link>
 			</div>
 		</div>
 	);

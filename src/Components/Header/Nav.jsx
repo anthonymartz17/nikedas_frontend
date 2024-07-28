@@ -6,7 +6,10 @@ import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
 import logoFullLight from "../../assets/logos_nikeda/nikedas_light.png";
 import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
+import { useAuth } from "../../Context/AuthContext";
+
 export default function Nav() {
+	const { currentUser } = useAuth();
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 

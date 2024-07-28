@@ -72,8 +72,6 @@ export default function ProfileForm({
     }
   }
 
-  console.log(showAlert)
-
   return (
     <div>
       <Modal

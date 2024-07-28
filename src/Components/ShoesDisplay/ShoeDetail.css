@@ -2,10 +2,11 @@
 	font-family: "poppins";
 	margin-block: 2em;
 	overflow-y: auto;
+	width: 85%;
 }
 .shoe_description {
 	margin-bottom: 1em;
-	font-size: medium;
+	font-size: x-large;
 }
 
 .shoe_display_collage_list {
@@ -57,7 +58,8 @@
 			"display buttons";
 		grid-template-columns: 1fr 1fr;
 		gap: 1em;
-		width: 80%;
+		width: 100%;
+		max-width: 1200px;
 		max-height: 768px;
 	}
 	.shoe_price {
@@ -94,7 +96,9 @@
 	.shoe_description {
 		grid-area: description;
 		margin: 0;
+		font-size: large;
 	}
+
 	.shoe_sizes {
 		margin: 0;
 		grid-area: size;

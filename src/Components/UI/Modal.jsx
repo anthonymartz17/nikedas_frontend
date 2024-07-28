@@ -8,8 +8,6 @@ export default function Modal({
   handleAlertClose
 }) {
 
-  console.log('modal', showAlert)
-
   return (
     <div
       className="modal poppins"
