@@ -24,8 +24,8 @@ export default function SignUp() {
 		// }
 		try {
 			setIsLoading(true);
-			const response = await signUp(signUpForm.email, newUser.password);
-			createUser({ email: signUpForm.email, isActive: false });
+			const response = await signUp(signUpForm.email, signUpForm.password);
+			// createUser({ email: signUpForm.email, isActive: false });
 			setLoggedinUserData(signUpForm.email);
 
 			// setArePasswordsDiff(false);
