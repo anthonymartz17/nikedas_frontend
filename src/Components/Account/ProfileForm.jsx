@@ -3,6 +3,9 @@ import "./ListingForm.css"
 import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
+// firebase
+import { useAuth } from "../../Context/AuthContext.jsx"
+
 // services
 import { fetchUserById, updateUser } from "../../Services/users.services.js"
 
@@ -32,8 +35,9 @@ export default function ProfileForm({
     setShowAlert(false)
   }
 
-  // id from session token
-  const user_id = 2;
+  // config auth
+  const  { currentUser: uuid } = useAuth();
+  const user_id = uuid ? uuid : 2;
 
   // get user profile
   async function getUser(user_id) {
@@ -82,7 +86,7 @@ export default function ProfileForm({
 
       <div className="form_page global_card">
         <h2 className="form_header">{formHeader}</h2>
-        <form className="listing_form profile_form" onSubmit={handleSubmit}>
+        <form className="listing_form profile_form"   onSubmit={handleSubmit}>
 
           <div className="flex_item">
             <label>Email: (You cannot update email)
