@@ -1,6 +1,6 @@
 .form_page {
   width: 70%;
-  margin: 0 auto;
+  margin: 30px auto;
   font-family: "poppins"
 }
 
@@ -46,6 +46,15 @@ select {
 
 .description {
   flex: 100%
+}
+
+.secondary_img_preview {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.secondary_img_preview * {
+  width: 50%;
 }
 
 .form_button {
