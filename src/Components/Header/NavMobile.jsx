@@ -6,7 +6,6 @@ import { useAuth } from "../../Context/AuthContext";
 export default function NavMobile({ onToggleMenu }) {
 	const navigate = useNavigate();
 	const { currentUser, logout } = useAuth();
-	console.log(currentUser.email);
 	async function handleLogout() {
 		logout();
 		onToggleMenu();
@@ -20,8 +19,8 @@ export default function NavMobile({ onToggleMenu }) {
 				}`}
 			>
 				<span className="navbar_mobile_menu_back">
-					<span class="material-symbols-outlined">person</span>{" "}
-					<span className="text-xs">{currentUser.email}</span>
+					<span className="material-symbols-outlined">person</span>{" "}
+					<span className="text-xs">{currentUser?.email}</span>
 				</span>
 				<span onClick={onToggleMenu} className="material-symbols-outlined ">
 					close
