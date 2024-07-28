@@ -1,9 +1,11 @@
 import "./Auth.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
+import { createUser } from "../../Services/users.services";
 
 export default function SignUp() {
+	const navigate = useNavigate();
 	const { signUp } = useAuth();
 	const [signUpForm, setSignUpForm] = useState({
 		email: "",
@@ -18,22 +20,18 @@ export default function SignUp() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		// if (newUser.password !== newUser.confirmPassword) {
-		// 	setArePasswordsDiff(true);
-		// 	return;
-		// }
-		try {
-			setIsLoading(true);
-			const response = await signUp(signUpForm.email, signUpForm.password);
-			// createUser({ email: signUpForm.email, isActive: false });
-			setLoggedinUserData(signUpForm.email);
 
-			// setArePasswordsDiff(false);
-			setNewUser({});
+		try {
+			const response = await signUp(signUpForm.email, signUpForm.password);
+			const newUser = await createUser({
+				email: signUpForm.email,
+				uid: response.user.uid,
+			});
+
+			setSignUpForm({});
 			navigate("/account");
 		} catch (error) {
-			// setAlertProps({ msg: error.message, isSuccess: false });
-			// toggleAlert();
+			console.log(error);
 		} finally {
 			// setIsLoading(false);
 		}
