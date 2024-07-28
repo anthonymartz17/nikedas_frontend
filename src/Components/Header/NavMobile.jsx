@@ -1,11 +1,17 @@
 import "./NavMobile.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import categories from "./navigation";
 import { useAuth } from "../../Context/AuthContext";
 export default function NavMobile({ onToggleMenu }) {
-	const { currentUser } = useAuth();
-
+	const navigate = useNavigate();
+	const { currentUser, logout } = useAuth();
+	console.log(currentUser);
+	async function handleLogout() {
+		logout();
+		onToggleMenu();
+		navigate("/auth");
+	}
 	return (
 		<div className="nav_mobile poppins-light">
 			<div className="navbar_mobile_menu_header justify-end">
@@ -26,22 +32,53 @@ export default function NavMobile({ onToggleMenu }) {
 					))}
 				</ul>
 			</div>
-			<div className="navbar_footer">
-				<Link
-					to="/auth/signup"
-					className="btn btn_bg_light"
-					onClick={() => onToggleMenu()}
-				>
-					Join Us
-				</Link>
-				<Link
-					to="/auth"
-					className="btn btn_mute_light"
-					onClick={() => onToggleMenu()}
-				>
-					Log In
-				</Link>
-			</div>
+
+			{currentUser ? (
+				<div className="navbar_footer">
+					<ul className="links">
+						<Link to="/">
+							<li onClick={() => onToggleMenu()} className="link_item">
+								<span>Nikedas</span>
+								<span class="material-symbols-outlined">team_dashboard</span>
+							</li>
+						</Link>
+						<Link to="/account">
+							<li onClick={() => onToggleMenu()} className="link_item">
+								<span>Dashboard</span>
+								<span class="material-symbols-outlined">bar_chart_4_bars</span>
+							</li>
+						</Link>
+						<Link to="/account/profile">
+							<li onClick={() => onToggleMenu()} className="link_item">
+								<span>Profile</span>
+								<span class="material-symbols-outlined">person</span>
+							</li>
+						</Link>
+
+						<li onClick={() => handleLogout()} className="link_item">
+							<span>log out</span>
+							<span class="material-symbols-outlined">logout</span>
+						</li>
+					</ul>
+				</div>
+			) : (
+				<div className="navbar_footer navbar_footer_logout">
+					<Link
+						to="/auth/signup"
+						className="btn btn_bg_light"
+						onClick={() => onToggleMenu()}
+					>
+						Join Us
+					</Link>
+					<Link
+						to="/auth"
+						className="btn btn_mute_light"
+						onClick={() => onToggleMenu()}
+					>
+						Log In
+					</Link>
+				</div>
+			)}
 		</div>
 	);
 }

@@ -1,6 +1,6 @@
 .nav_mobile {
 	display: grid;
-	grid-template-rows: 10% 1fr 15%;
+	grid-template-rows: 10% 1fr 35%;
 	height: 100%;
 }
 
@@ -30,6 +30,13 @@
 	flex-direction: column;
 	padding-inline: 1em;
 	gap: 1em;
+	border-top: 1px solid var(--light);
+}
+
+.navbar_footer_logout {
+	justify-content: end;
+	border: none;
+	margin-bottom: 1em;
 }
 /* Add responsiveness */
 @media (min-width: 768px) {

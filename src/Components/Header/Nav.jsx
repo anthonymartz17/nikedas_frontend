@@ -56,6 +56,10 @@ export default function Nav() {
 						<Link to="/auth">Login</Link>
 						<Link to="/auth/signup">Join Us</Link>
 					</div>
+					<div className="auth_btn_container poppins-light ">
+						<Link to="/account">Dashboad</Link>
+						<Link to="/auth/signup">Profile</Link>
+					</div>
 				</div>
 				<div className="navbar_desktop_bottom">
 					<Link to="/" className="navbar_logo poppins-bold">
