@@ -42,7 +42,7 @@ export default function AccountTable({}) {
 	}, []);
 
 	return (
-		<div className="relative overflow-x-auto shadow-md sm:rounded-lg poppins-regular m-3">
+		<div className="relative overflow-x-auto shadow-md sm:rounded-lg poppins-regular table-container">
 			<div className="flex items-center justify-between flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 px-2 bg-white dark:bg-gray-900 ">
 				<div></div>
 				{/* <label htmlFor="table-search" className="sr-only">
