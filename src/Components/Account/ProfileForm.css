@@ -1,0 +1,8 @@
+.profile_form {
+  width: 50%;
+  margin: 20px auto;
+  flex-direction: column;
+}
+.profile_form * {
+  flex: 100%;
+}

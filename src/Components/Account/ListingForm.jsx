@@ -74,7 +74,7 @@ export default function ListingForm({
   }
 
   return (
-    <div className="form_page">
+    <div className="form_page global_card">
       <h2 className="form_header">{formHeader}</h2>
       <form className="listing_form" onSubmit={handleSubmit}>
 
