@@ -58,10 +58,10 @@ function App() {
 								<Route path="listing/:id" element={<ShoeListing />} />
 							</Route>
 
-						<Route path="/seller/:id " element={<Seller />}>
-							<Route path="" element={<Store />} />
-							<Route path="about" element={<AboutSeller />} />
-						</Route>
+              <Route path="/seller/:id" element={<Seller />}>
+                <Route path="" element={<Store />} />
+                <Route path="about" element={<AboutSeller />} />
+              </Route>
 
 							<Route path="*" element={<NotFound />} />
 						</Routes>
