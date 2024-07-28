@@ -76,6 +76,27 @@ export default function Nav() {
 						</div>
 					)}
 				</div>
+				<div className="navbar_desktop_bottom">
+					<Link to="/" className="navbar_logo poppins-bold">
+						<img
+							className="nikedas_full_logo"
+							src={logoFullDark}
+							alt="nikedas_logo"
+						/>
+					</Link>
+					<NavDesktop />
+					<input
+						onClick={() => toggleSearch()}
+						// disabled
+						style={{ width: "20%" }}
+						className="search_searchbar"
+						type="text"
+						placeholder="Search"
+					/>
+					<div className="shopping_cart">
+						<span className="material-symbols-outlined">local_mall</span>
+					</div>
+				</div>
 			</div>
 
 			<div className={`navbar_mobile_menu ${isMenuOpen ? "active" : ""}`}>
