@@ -2,7 +2,6 @@
 	background-color: var(--dark);
 	height: 100%;
 	padding-inline: 1em;
-	
 }
 
 .navbar_mobile {
@@ -97,7 +96,6 @@
 }
 .navbar_desktop {
 	display: none;
-	
 }
 /* Medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -141,14 +139,19 @@
 		display: flex;
 		gap: 1em;
 	}
+	.link_item {
+		border-bottom: 1px solid transparent;
+		transition: all 250ms ease-in-out;
+	}
+	.link_item:hover {
+		border-bottom: 1px solid var(--light);
+	}
 }
 
 /* Large devices (desktops) */
 @media (min-width: 992px) {
-	.navbar_search_product_mobile{
+	.navbar_search_product_mobile {
 		display: flex;
 		justify-content: center;
 	}
-
-	
 }

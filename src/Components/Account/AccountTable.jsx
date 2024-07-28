@@ -42,10 +42,21 @@ export default function AccountTable({}) {
 	}, []);
 
 	return (
-		<div className="relative overflow-x-auto shadow-md sm:rounded-lg poppins-regular table-container">
-			<div className="flex items-center justify-between flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 px-2 bg-white dark:bg-gray-900 ">
-				<div></div>
-				{/* <label htmlFor="table-search" className="sr-only">
+		<div className="">
+			<div className="table_btn_container">
+				<Link
+					to="listing/new"
+					type="button"
+					class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 poppins-regular"
+				>
+					<span class="material-symbols-outlined">add</span>{" "}
+					<span>Add Listing</span>
+				</Link>
+			</div>
+			<div className="relative overflow-x-auto shadow-md sm:rounded-lg poppins-regular table-container">
+				<div className="flex items-center justify-between flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 px-2 bg-white dark:bg-gray-900 ">
+					<div></div>
+					{/* <label htmlFor="table-search" className="sr-only">
 					Search
 				</label>
 				<div className="relative">
@@ -73,7 +84,7 @@ export default function AccountTable({}) {
 						placeholder="Search for users"
 					/>
 				</div> */}
-				{/* <div>
+					{/* <div>
 					<button
 						id="dropdownActionButton"
 						data-dropdown-toggle="dropdownAction"
@@ -142,108 +153,112 @@ export default function AccountTable({}) {
 						</div>
 					</div>
 				</div> */}
-			</div>
-			<table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-				<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-					<tr>
-						<th scope="col" className="p-4">
-							<div className="flex items-center">
-								<input
-									id="checkbox-all-search"
-									type="checkbox"
-									className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-								/>
-								<label htmlFor="checkbox-all-search" className="sr-only">
-									checkbox
-								</label>
-							</div>
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Photo
-						</th>
-
-						<th scope="col" className="px-6 py-3">
-							Brand
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Product ID
-						</th>
-
-						<th scope="col" className="px-6 py-3">
-							Color
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Price
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Action
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{listings.map((listing) => (
-						<tr
-							key={listing.id}
-							className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-						>
-							<td className="w-4 p-4">
+				</div>
+				<table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+					<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+						<tr>
+							<th scope="col" className="p-4">
 								<div className="flex items-center">
 									<input
-										id="checkbox-table-search-1"
+										id="checkbox-all-search"
 										type="checkbox"
 										className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 									/>
-									<label htmlFor="checkbox-table-search-1" className="sr-only">
+									<label htmlFor="checkbox-all-search" className="sr-only">
 										checkbox
 									</label>
 								</div>
-							</td>
-							<td
-								scope="row"
-								className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
-							>
-								<img
-									className="w-10 h-10 rounded-full"
-									src={listing.primary_img}
-									alt="Jese image"
-								/>
-							</td>
-							<td className="px-6 py-4">{listing.brand}</td>
-							<td className="px-6 py-4">
-								<div className="flex items-center">
-									{listing.product_number}
-								</div>
-							</td>
-							<td className="px-6 py-4 text-wrap">{listing.color}</td>
-							<td className="px-6 py-4 text-wrap">${listing.price}</td>
-							<td className="px-6 py-4 text-wrap flex gap-2">
-								<Link to={`listing/${listing.id}`}>
-									<span className="material-symbols-outlined cursor-pointer hover:text-white">
-										visibility
-									</span>
-								</Link>
-								<Link to={`listing/${listing.id}/edit`}>
-									<span className="material-symbols-outlined cursor-pointer hover:text-white">
-										edit_square
-									</span>
-								</Link>
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Photo
+							</th>
 
-								<span
-									onClick={() => confirmBeforeDelete(listing.id)}
-									className="material-symbols-outlined cursor-pointer hover:text-white"
-								>
-									delete
-								</span>
-							</td>
+							<th scope="col" className="px-6 py-3">
+								Brand
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Product ID
+							</th>
+
+							<th scope="col" className="px-6 py-3">
+								Color
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Price
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Action
+							</th>
 						</tr>
-					))}
-				</tbody>
-			</table>
-			<Alert
-				modalOpen={modalOpen}
-				setModalOpen={setModalOpen}
-				onHandleDeleteListing={handleDeleteListing}
-			/>
+					</thead>
+					<tbody>
+						{listings.map((listing) => (
+							<tr
+								key={listing.id}
+								className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+							>
+								<td className="w-4 p-4">
+									<div className="flex items-center">
+										<input
+											id="checkbox-table-search-1"
+											type="checkbox"
+											className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+										/>
+										<label
+											htmlFor="checkbox-table-search-1"
+											className="sr-only"
+										>
+											checkbox
+										</label>
+									</div>
+								</td>
+								<td
+									scope="row"
+									className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
+								>
+									<img
+										className="w-10 h-10 rounded-full"
+										src={listing.primary_img}
+										alt="Jese image"
+									/>
+								</td>
+								<td className="px-6 py-4">{listing.brand}</td>
+								<td className="px-6 py-4">
+									<div className="flex items-center">
+										{listing.product_number}
+									</div>
+								</td>
+								<td className="px-6 py-4 text-wrap">{listing.color}</td>
+								<td className="px-6 py-4 text-wrap">${listing.price}</td>
+								<td className="px-6 py-4 text-wrap flex gap-2">
+									<Link to={`listing/${listing.id}`}>
+										<span className="material-symbols-outlined cursor-pointer hover:text-white">
+											visibility
+										</span>
+									</Link>
+									<Link to={`listing/${listing.id}/edit`}>
+										<span className="material-symbols-outlined cursor-pointer hover:text-white">
+											edit_square
+										</span>
+									</Link>
+
+									<span
+										onClick={() => confirmBeforeDelete(listing.id)}
+										className="material-symbols-outlined cursor-pointer hover:text-white"
+									>
+										delete
+									</span>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+				<Alert
+					modalOpen={modalOpen}
+					setModalOpen={setModalOpen}
+					onHandleDeleteListing={handleDeleteListing}
+				/>
+			</div>
 		</div>
 	);
 }

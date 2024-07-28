@@ -8,12 +8,15 @@ import {
 	fetchShoeById,
 	updateShoe,
 } from "../../Services/shoes.services.js";
+import { useAuth } from "../../Context/AuthContext.jsx";
 
-import Input from "./Input.jsx";
+// import Input from "./Input.jsx";
 
-const user_id = 2;
+// const user_id = 2;
 
 export default function ListingForm({ formHeader }) {
+	const { currentUser } = useAuth();
+	
 	const [listingForm, setListingForm] = useState({
 		brand: "",
 		model: "",
@@ -27,23 +30,23 @@ export default function ListingForm({ formHeader }) {
 		description: "",
 		primary_img: "",
 		secondary_img: [],
-		seller_id: user_id,
+		seller_id: null,
 	});
 	const { id } = useParams();
 	const navigate = useNavigate();
 
 	async function getListing(id) {
-		const listing = await fetchShoeById(id);
-		setListingForm(listing);
+		try {
+			const listing = await fetchShoeById(id);
+			setListingForm(listing);
+		} catch (error) {
+			throw error;
+		}
 	}
 
 	useEffect(() => {
 		if (id) {
-			try {
-				getListing(id);
-			} catch (error) {
-				throw error;
-			}
+			getListing(id);
 		}
 	}, [id]);
 
