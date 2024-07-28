@@ -20,14 +20,14 @@ export default function Carousel({
 	}, [autoSlide, autoSlideInterval, next]);
 
 	return (
-		<div className="relative mb-3">
+		<div className="relative mb-3  overflow-hidden">
 			<div
 				className="flex transition-transform ease-out duration-500"
 				style={{ transform: `translateX(-${curr * 100}%)` }}
 			>
 				{slides}
 			</div>
-			<div className="carousel_btn">
+			<div className=" carousel_btn">
 				<button
 					onClick={prev}
 					className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white w-fit"
