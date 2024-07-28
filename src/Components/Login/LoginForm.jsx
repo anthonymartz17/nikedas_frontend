@@ -1,57 +1,78 @@
-import './Auth.css'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import "./Auth.css";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 
 export default function LoginForm() {
-  const [ loginForm, setLoginForm ] = useState({
-    email: "",
-    password: ""
-  })
-  
-  function handleChange(e) {
-    const value = e.target.value;
-    setLoginForm({...loginForm, [e.target.id]:e.target.value});
-  }
+	const navigate = useNavigate();
+	const { login } = useAuth();
+	const [loginForm, setLoginForm] = useState({
+		email: "",
+		password: "",
+	});
 
-  function handleSubmit(e) {
-    e.preventDefault();
+	function handleChange(e) {
+		const value = e.target.value;
+		setLoginForm({ ...loginForm, [e.target.id]: e.target.value });
+	}
 
-  }
+	async function handleSubmit(e) {
+		e.preventDefault();
+		// setIsLoading(true);
 
-  return (
-    <section className="auth global_card">
+		try {
+			const response = await login(loginForm.email, loginForm.password);
+			// setLoggedinUserData(email);
+			setLoginForm({});
+			navigate("/account");
+		} catch (error) {
+			console.log(error);
+			// setAlertProps({ msg: error.message, isSuccess: false });
+			// toggleAlert();
+		} finally {
+			// setIsLoading(false);
+		}
+	}
 
-      <h3 className="auth-heading">Welcome back!</h3>
-      
-      <form className="auth_form" onSubmit={handleSubmit}>
-        
-        <label></label>
-        <input
-          type="text"
-          placeholder="Email*"
-          value={loginForm.email}
-          onChange={handleChange}
-          id="email"
-          required
-        />
-        
-        <label></label>
-        <input
-          type="password"
-          placeholder="Password*"
-          value={loginForm.password}
-          onChange={handleChange}
-          id="password"
-          required
-        />
-        
-        <Link to="/auth/forgot" className="forgot_password">Forgot Password?</Link>
-        
-        <button className='btn btn_bg_dark' type="submit">Sign in</button>
-      </form>
+	return (
+		<section className="auth global_card">
+			<h3 className="poppins-semibold">Welcome back!</h3>
 
-      <Link to="signup" className="create_account">Create an account</Link>
+			<form className="auth_form" onSubmit={handleSubmit}>
+				<label></label>
+				<input
+					type="text"
+					placeholder="Email*"
+					value={loginForm.email}
+					onChange={handleChange}
+					id="email"
+					required
+					className="global_input_field"
+				/>
 
-    </section>
-  )
+				<label></label>
+				<input
+					type="password"
+					placeholder="Password*"
+					value={loginForm.password}
+					onChange={handleChange}
+					id="password"
+					required
+					className="global_input_field"
+				/>
+
+				<Link to="/auth/forgot" className="forgot_password">
+					Forgot Password?
+				</Link>
+
+				<button className="btn btn_bg_dark" type="submit">
+					Sign in
+				</button>
+			</form>
+
+			<Link to="signup" className="create_account text-orange-500 underline">
+				Create an account
+			</Link>
+		</section>
+	);
 }

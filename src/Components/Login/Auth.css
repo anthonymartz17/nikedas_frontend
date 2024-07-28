@@ -1,8 +1,12 @@
+.authentication_page {
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+
 .auth {
-	width: 300px;
-	height: 400px;
-	margin: 20px auto;
-	padding: 4em;
+	width: 80%;
+  max-width: 25em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -10,8 +14,8 @@
 	text-align: center;
 }
 
-.auth * {
-	box-sizing: border-box;
+.auth {
+	width: 80%;
 }
 
 .auth_form {

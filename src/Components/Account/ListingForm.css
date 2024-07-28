@@ -1,7 +1,7 @@
 .form_page {
   width: 70%;
   margin: 30px auto;
-  font-family: "poppins"
+ 
 }
 
 .form_header {
@@ -23,7 +23,10 @@
 
 .listing_form input, .listing_form select, .listing_form textarea
  {
-  border: 1px solid gray;
+  border: 1px solid rgba(128, 128, 128, 0.456);
+  border-radius: 5px;
+  padding: 1em;
+  margin-block: .5em;
 }
 
 .flex_row {

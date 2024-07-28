@@ -5,6 +5,18 @@
 	margin-block: 2em;
 	padding-block: 1em;
 }
+.carousel_btn {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+
+	padding: 10px;
+	cursor: pointer;
+	z-index: 1;
+}
 
 .carousel_subtitle {
 	color: var(--light);
@@ -50,18 +62,6 @@
 	cursor: pointer;
 }
 
-.carousel_btn {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background: rgba(0, 0, 0, 0.5);
-	color: white;
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	z-index: 1;
-}
-
 .carousel_btn.left {
 	left: 0;
 }
@@ -75,6 +75,6 @@
 
 @media (min-width: 992px) {
 	.carousel_img {
-	height: 30%;
+		height: 30%;
 	}
 }
