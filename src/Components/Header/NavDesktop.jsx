@@ -2,6 +2,7 @@ import categories from "./navigation";
 import "./NavDesktop.css";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 export default function NavDesktop() {
 	const navigate = useNavigate();
 	const dropdownRef = useRef(null);
@@ -19,7 +20,7 @@ export default function NavDesktop() {
 
 	function searchShoes() {
 		navigate("/shoes");
-		hideDropdown()
+		hideDropdown();
 	}
 
 	return (

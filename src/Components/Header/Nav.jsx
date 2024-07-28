@@ -52,35 +52,29 @@ export default function Nav() {
 			</div>
 			<div className="navbar_desktop">
 				<div className="navbar_desktop_top">
-					<div className="auth_btn_container poppins-light ">
-						<Link to="/auth">Login</Link>
-						<Link to="/auth/signup">Join Us</Link>
-					</div>
-					<div className="auth_btn_container poppins-light ">
-						<Link to="/account">Dashboad</Link>
-						<Link to="/auth/signup">Profile</Link>
-					</div>
-				</div>
-				<div className="navbar_desktop_bottom">
-					<Link to="/" className="navbar_logo poppins-bold">
-						<img
-							className="nikedas_full_logo"
-							src={logoFullDark}
-							alt="nikedas_logo"
-						/>
-					</Link>
-					<NavDesktop />
-					<input
-						onClick={() => toggleSearch()}
-						// disabled
-						style={{ width: "20%" }}
-						className="search_searchbar"
-						type="text"
-						placeholder="Search"
-					/>
-					<div className="shopping_cart">
-						<span className="material-symbols-outlined">local_mall</span>
-					</div>
+					{currentUser ? (
+						<div className="auth_btn_container poppins-light ">
+							<Link to="/account">
+								<li className="link_item">
+									<span>Dashboard</span>
+								</li>
+							</Link>
+							<Link to="/account/profile">
+								<li className="link_item">
+									<span>Profile</span>
+								</li>
+							</Link>
+
+							<li className="link_item">
+								<span>log out</span>
+							</li>
+						</div>
+					) : (
+						<div className="auth_btn_container poppins-light ">
+							<Link to="/auth">Login</Link>
+							<Link to="/auth/signup">Join Us</Link>
+						</div>
+					)}
 				</div>
 			</div>
 
