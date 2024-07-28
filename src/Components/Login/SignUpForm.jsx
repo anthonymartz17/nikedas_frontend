@@ -35,7 +35,6 @@ export default function SignUp() {
 			// setAlertProps({ msg: error.message, isSuccess: false });
 			// toggleAlert();
 		} finally {
-			console.log("did it work");
 			// setIsLoading(false);
 		}
 	}
