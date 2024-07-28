@@ -36,8 +36,8 @@ export default function ProfileForm({
   }
 
   // config auth
-  const  { currentUser } = useAuth();
-  const user_id = 2;
+  const  { currentUser: uuid } = useAuth();
+  const user_id = uuid ? uuid : 2;
 
   // get user profile
   async function getUser(user_id) {
@@ -86,7 +86,7 @@ export default function ProfileForm({
 
       <div className="form_page global_card">
         <h2 className="form_header">{formHeader}</h2>
-        <form className="listing_form profile_form" onSubmit={handleSubmit}>
+        <form className="listing_form profile_form"   onSubmit={handleSubmit}>
 
           <div className="flex_item">
             <label>Email: (You cannot update email)

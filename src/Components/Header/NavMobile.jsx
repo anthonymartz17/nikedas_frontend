@@ -39,25 +39,25 @@ export default function NavMobile({ onToggleMenu }) {
 						<Link to="/">
 							<li onClick={() => onToggleMenu()} className="link_item">
 								<span>Nikedas</span>
-								<span class="material-symbols-outlined">team_dashboard</span>
+								<span className="material-symbols-outlined">team_dashboard</span>
 							</li>
 						</Link>
 						<Link to="/account">
 							<li onClick={() => onToggleMenu()} className="link_item">
 								<span>Dashboard</span>
-								<span class="material-symbols-outlined">bar_chart_4_bars</span>
+								<span className="material-symbols-outlined">bar_chart_4_bars</span>
 							</li>
 						</Link>
 						<Link to="/account/profile">
 							<li onClick={() => onToggleMenu()} className="link_item">
 								<span>Profile</span>
-								<span class="material-symbols-outlined">person</span>
+								<span className="material-symbols-outlined">person</span>
 							</li>
 						</Link>
 
 						<li onClick={() => handleLogout()} className="link_item">
 							<span>log out</span>
-							<span class="material-symbols-outlined">logout</span>
+							<span className="material-symbols-outlined">logout</span>
 						</li>
 					</ul>
 				</div>

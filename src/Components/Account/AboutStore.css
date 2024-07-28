@@ -1,0 +1,18 @@
+.about_store {
+  width: 50%;
+  margin: 10px auto;
+  font-family: poppins;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.bar {
+  width: 100px;
+  height: 10px;
+  background: red;
+}
+
