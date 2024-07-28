@@ -85,6 +85,7 @@
 	width: 100%;
 	display: none;
 	transition: opacity 150ms ease-in-out;
+	z-index: 2;
 }
 
 .navbar_mobile_menu_backdrop.active {
