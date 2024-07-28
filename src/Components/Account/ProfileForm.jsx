@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
 // services
-import { fetchUserById } from "../../Services/users.services.js"
+import { fetchUserById, updateUser } from "../../Services/users.services.js"
 
 export default function ProfileForm({
   formHeader
@@ -49,22 +49,10 @@ export default function ProfileForm({
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const size = profileForm.size
-    const sizeToFloat = parseFloat(size)
-
-    if (id) {
-      try {
-        const res = await updateShoe(id, {...profileForm, size: sizeToFloat})
-        navigate(`/account/listing/${id}`)
-      } catch (error) {
-          throw error
-      }
-    } else {
-        try {
-          const res = await createShoe({...profileForm, size: sizeToFloat})
-        } catch(error) {
-            throw error
-        }
+    try {
+      const res = await updateUser(user_id, profileForm)
+    } catch (error) {
+        throw error
     }
   }
 
@@ -138,7 +126,7 @@ export default function ProfileForm({
 
         <div className="flex_row">
           <div className="flex_item checkbox_row">
-            <label for="is_active">Active:</label>
+            <label htmlFor="is_active">Active:</label>
               <input
                 name="is_active"
                 type="checkbox"
