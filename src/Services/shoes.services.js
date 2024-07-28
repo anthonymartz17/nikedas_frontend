@@ -19,3 +19,17 @@ export async function fetchShoeById(id) {
 		throw error;
 	}
 }
+export async function deleteListing(id) {
+	try {
+		const res = await fetch(`${NIKEDAS_API}/${id}`, {
+			method: "DELETE",
+		});
+		if (!res.ok) {
+			throw new Error(`Failed to delete listing with status: ${res.status}`);
+		}
+		const shoe = await res.json();
+		return shoe;
+	} catch (error) {
+		throw error;
+	}
+}

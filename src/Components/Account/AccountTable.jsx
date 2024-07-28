@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "./AccountTable.css";
 import { Link } from "react-router-dom";
-import { fetchAllShoes } from "../../Services/shoes.services";
-
-export default function AccountTable({ onConfirmBeforeDelete, toDeleteId }) {
+import { fetchAllShoes, deleteListing } from "../../Services/shoes.services";
+import Alert from "../UI/Alert";
+export default function AccountTable({}) {
 	// const [isDropdownOpen, setDropdownOpen] = useState(false);
 	const [listings, setListings] = useState([]);
 
 	// const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
 	// const openModal = () => setModalOpen(true);
 	// const closeModal = () => setModalOpen(false);
+	const [modalOpen, setModalOpen] = useState(false);
+	const [toDeleteId, setToDeleteId] = useState(null);
 
-	async function handleDeleteTransaction() {
-		console.log(toDeleteId);
+	function confirmBeforeDelete(id) {
+		setModalOpen(true);
+		setToDeleteId(id);
+	}
+
+	async function handleDeleteListing() {
 		try {
-			// await deleteListing(toDeleteId);
-			// setTransactions((prev) =>
-			// 	prev.filter((tranx) => tranx.id !== toDeleteId)
-			// );
+			await deleteListing(toDeleteId);
+			setListings((prev) =>
+				prev.filter((listing) => listing.id !== toDeleteId)
+			);
 		} catch (error) {
 			console.log(error);
 		}
@@ -223,7 +229,7 @@ export default function AccountTable({ onConfirmBeforeDelete, toDeleteId }) {
 								</Link>
 
 								<span
-									onClick={() => onConfirmBeforeDelete(listing.id)}
+									onClick={() => confirmBeforeDelete(listing.id)}
 									className="material-symbols-outlined cursor-pointer hover:text-white"
 								>
 									delete
@@ -233,6 +239,11 @@ export default function AccountTable({ onConfirmBeforeDelete, toDeleteId }) {
 					))}
 				</tbody>
 			</table>
+			<Alert
+				modalOpen={modalOpen}
+				setModalOpen={setModalOpen}
+				onHandleDeleteListing={handleDeleteListing}
+			/>
 		</div>
 	);
 }

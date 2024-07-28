@@ -27,16 +27,8 @@ import Store from "./Pages/Store.jsx";
 import AboutSeller from "./Pages/AboutSeller.jsx";
 import NotFound from "./Pages/NotFound.jsx";
 import AccountDashboard from "./Components/Account/AccountDashboard.jsx";
-import Alert from "./Components/UI/Alert.jsx";
 import AuthContextProvider from "./Context/AuthContext.jsx";
 function App() {
-	const [modalOpen, setModalOpen] = useState(false);
-	const [toDeleteId, setToDeleteId] = useState(null);
-
-	function confirmBeforeDelete(id) {
-		setModalOpen(true);
-		setToDeleteId(id);
-	}
 	return (
 		<AuthContextProvider>
 			<Router>
@@ -59,15 +51,7 @@ function App() {
 							</Route>
 
 							<Route path="/account" element={<Account />}>
-								<Route
-									path=""
-									element={
-										<AccountDashboard
-											onConfirmBeforeDelete={confirmBeforeDelete}
-											toDeleteId={toDeleteId}
-										/>
-									}
-								/>
+								<Route path="" element={<AccountDashboard />} />
 								<Route path="profile" element={<Profile />} />
 								<Route path="listing/new" element={<NewListing />} />
 								<Route path="listing/:id/edit" element={<EditListing />} />
@@ -85,7 +69,6 @@ function App() {
 					</main>
 					<Footer />
 				</div>
-				<Alert modalOpen={modalOpen} setModalOpen={setModalOpen} />
 			</Router>
 		</AuthContextProvider>
 	);
