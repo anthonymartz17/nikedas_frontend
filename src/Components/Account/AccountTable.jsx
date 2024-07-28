@@ -3,13 +3,13 @@ import "./AccountTable.css";
 import { Link } from "react-router-dom";
 import { fetchAllShoes, deleteListing } from "../../Services/shoes.services";
 import Alert from "../UI/Alert";
+import { fetchSellerListings } from "../../Services/users.services";
+import { useAuth } from "../../Context/AuthContext";
 export default function AccountTable({}) {
-	// const [isDropdownOpen, setDropdownOpen] = useState(false);
+	const { currentUser } = useAuth();
+	console.log(currentUser, "current user");
 	const [listings, setListings] = useState([]);
 
-	// const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
-	// const openModal = () => setModalOpen(true);
-	// const closeModal = () => setModalOpen(false);
 	const [modalOpen, setModalOpen] = useState(false);
 	const [toDeleteId, setToDeleteId] = useState(null);
 
@@ -29,10 +29,9 @@ export default function AccountTable({}) {
 		}
 	}
 
-	//temp logic until auth is worked on
 	async function getSellerListings() {
 		try {
-			const shoesData = await fetchAllShoes();
+			const shoesData = await fetchSellerListings(currentUser.uid);
 			setListings(shoesData);
 		} catch (error) {}
 	}
@@ -47,9 +46,9 @@ export default function AccountTable({}) {
 				<Link
 					to="listing/new"
 					type="button"
-					class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 poppins-regular"
+					className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 poppins-regular"
 				>
-					<span class="material-symbols-outlined">add</span>{" "}
+					<span className="material-symbols-outlined">add</span>{" "}
 					<span>Add Listing</span>
 				</Link>
 			</div>
@@ -158,7 +157,7 @@ export default function AccountTable({}) {
 					<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 						<tr>
 							<th scope="col" className="p-4">
-								<div className="flex items-center">
+								{/* <div className="flex items-center">
 									<input
 										id="checkbox-all-search"
 										type="checkbox"
@@ -167,7 +166,7 @@ export default function AccountTable({}) {
 									<label htmlFor="checkbox-all-search" className="sr-only">
 										checkbox
 									</label>
-								</div>
+								</div> */}
 							</th>
 							<th scope="col" className="px-6 py-3">
 								Photo
@@ -192,65 +191,71 @@ export default function AccountTable({}) {
 						</tr>
 					</thead>
 					<tbody>
-						{listings.map((listing) => (
-							<tr
-								key={listing.id}
-								className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-							>
-								<td className="w-4 p-4">
-									<div className="flex items-center">
-										<input
-											id="checkbox-table-search-1"
-											type="checkbox"
-											className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-										/>
-										<label
-											htmlFor="checkbox-table-search-1"
-											className="sr-only"
-										>
-											checkbox
-										</label>
-									</div>
-								</td>
-								<td
-									scope="row"
-									className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
+						{listings.length > 0 ? (
+							listings.map((listing) => (
+								<tr
+									key={listing.id}
+									className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
 								>
-									<img
-										className="w-10 h-10 rounded-full"
-										src={listing.primary_img}
-										alt="Jese image"
-									/>
-								</td>
-								<td className="px-6 py-4">{listing.brand}</td>
-								<td className="px-6 py-4">
-									<div className="flex items-center">
-										{listing.product_number}
-									</div>
-								</td>
-								<td className="px-6 py-4 text-wrap">{listing.color}</td>
-								<td className="px-6 py-4 text-wrap">${listing.price}</td>
-								<td className="px-6 py-4 text-wrap flex gap-2">
-									<Link to={`listing/${listing.id}`}>
-										<span className="material-symbols-outlined cursor-pointer hover:text-white">
-											visibility
-										</span>
-									</Link>
-									<Link to={`listing/${listing.id}/edit`}>
-										<span className="material-symbols-outlined cursor-pointer hover:text-white">
-											edit_square
-										</span>
-									</Link>
-
-									<span
-										onClick={() => confirmBeforeDelete(listing.id)}
-										className="material-symbols-outlined cursor-pointer hover:text-white"
+									<td className="w-4 p-4">
+										<div className="flex items-center">
+											<input
+												id="checkbox-table-search-1"
+												type="checkbox"
+												className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+											/>
+											<label
+												htmlFor="checkbox-table-search-1"
+												className="sr-only"
+											>
+												checkbox
+											</label>
+										</div>
+									</td>
+									<td
+										scope="row"
+										className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
 									>
-										delete
-									</span>
-								</td>
+										<img
+											className="w-10 h-10 rounded-full"
+											src={listing.primary_img}
+											alt="Jese image"
+										/>
+									</td>
+									<td className="px-6 py-4">{listing.brand}</td>
+									<td className="px-6 py-4">
+										<div className="flex items-center">
+											{listing.product_number}
+										</div>
+									</td>
+									<td className="px-6 py-4 text-wrap">{listing.color}</td>
+									<td className="px-6 py-4 text-wrap">${listing.price}</td>
+									<td className="px-6 py-4 text-wrap flex gap-2">
+										<Link to={`listing/${listing.id}`}>
+											<span className="material-symbols-outlined cursor-pointer hover:text-white">
+												visibility
+											</span>
+										</Link>
+										<Link to={`listing/${listing.id}/edit`}>
+											<span className="material-symbols-outlined cursor-pointer hover:text-white">
+												edit_square
+											</span>
+										</Link>
+
+										<span
+											onClick={() => confirmBeforeDelete(listing.id)}
+											className="material-symbols-outlined cursor-pointer hover:text-white"
+										>
+											delete
+										</span>
+									</td>
+								</tr>
+							))
+						) : (
+							<tr>
+								<td>No listings</td>
 							</tr>
-						))}
+						)}
 					</tbody>
 				</table>
 				<Alert

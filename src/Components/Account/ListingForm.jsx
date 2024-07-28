@@ -16,7 +16,7 @@ import { useAuth } from "../../Context/AuthContext.jsx";
 
 export default function ListingForm({ formHeader }) {
 	const { currentUser } = useAuth();
-	
+
 	const [listingForm, setListingForm] = useState({
 		brand: "",
 		model: "",
@@ -65,12 +65,20 @@ export default function ListingForm({ formHeader }) {
 			try {
 				const res = await updateShoe(id, { ...listingForm, size: sizeToFloat });
 				navigate(`/account/listing/${id}`);
+				setListingForm({});
 			} catch (error) {
 				throw error;
 			}
 		} else {
 			try {
-				const res = await createShoe({ ...listingForm, size: sizeToFloat });
+				const res = await createShoe({
+					...listingForm,
+					size: sizeToFloat,
+					uid: currentUser.uid,
+				});
+				console.log(res);
+				navigate(`/account/listing/${res.id}`);
+				setListingForm({});
 			} catch (error) {
 				throw error;
 			}
@@ -148,6 +156,7 @@ export default function ListingForm({ formHeader }) {
 							Gender:
 							<br />
 							<select
+								className="text-black"
 								type="text"
 								value={listingForm.gender}
 								onChange={handleChange}
@@ -155,8 +164,8 @@ export default function ListingForm({ formHeader }) {
 								required
 							>
 								<option value="">-- Choose an option --</option>
-								<option value="mens">Men's</option>
-								<option value="womens">Women's</option>
+								<option value="men">Men's</option>
+								<option value="women">Women's</option>
 								<option value="kids">Kid's</option>
 							</select>
 						</label>

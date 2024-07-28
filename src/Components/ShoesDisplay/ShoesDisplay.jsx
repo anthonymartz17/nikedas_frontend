@@ -46,9 +46,11 @@ export default function Shoes() {
 			</div>
 
 			<div className="shoes_display_area">
-				{shoesList.map((shoe) => (
-					<ShoeCard shoe={shoe} key={shoe.id} />
-				))}
+				{shoesList.length > 0 ? (
+					shoesList.map((shoe) => <ShoeCard shoe={shoe} key={shoe.id} />)
+				) : (
+					<p>no shoes available</p>
+				)}
 			</div>
 
 			<div
