@@ -4,12 +4,10 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				textLight: "#ffffff",
-				textDark: "#1a1a1a",
-				bgDark: "#1a1a1a",
-				darkHover: "#313131",
-				textAccent: "#ff3131",
-				bgAccent: "#ff3131",
+				light: "#ffffff",
+				dark: "#1a1a1a",
+				hover: "#313131",
+				accent: "#ff3131",
 			},
 		},
 	},

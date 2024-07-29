@@ -1,5 +1,5 @@
 .table-container {
-	height: 80vh;
+	max-height: 80vh;
 	display: flex;
 	flex-direction: column;
 	width: 85vw;
