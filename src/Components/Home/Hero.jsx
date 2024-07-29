@@ -1,5 +1,6 @@
 import "./Hero.css";
-import heroShoe from "../../../public/assets/hero-shoe-01.png";
+// import heroShoe from "../../../public/assets/hero-shoe-01.png";
+import heroShoe from "../../assets/graphics/hero_shoes.png";
 import { Link } from "react-router-dom";
 import fire from "../../assets/graphics/fire.svg";
 export default function Hero() {

@@ -5,10 +5,10 @@ import { fetchAllShoes, deleteListing } from "../../Services/shoes.services";
 import Alert from "../UI/Alert";
 import { fetchSellerListings } from "../../Services/users.services";
 import { useAuth } from "../../Context/AuthContext";
+import shoes from "../../assets/shoes_db";
 export default function AccountTable({}) {
 	const { currentUser } = useAuth();
-	console.log(currentUser, "current user");
-	const [listings, setListings] = useState([]);
+	const [listings, setListings] = useState(shoes);
 
 	const [modalOpen, setModalOpen] = useState(false);
 	const [toDeleteId, setToDeleteId] = useState(null);

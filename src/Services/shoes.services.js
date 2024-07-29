@@ -1,8 +1,9 @@
-const NIKEDAS_API = import.meta.env.VITE_APP_SHOES;
+const NIKEDAS_API_SHOES = import.meta.env.VITE_APP_SHOES;
 
 export async function fetchAllShoes() {
 	try {
-		const res = await fetch(NIKEDAS_API);
+		console.log(NIKEDAS_API_SHOES, "NIKEDAS_API_SHOES");
+		const res = await fetch(NIKEDAS_API_SHOES);
 		const shoes = await res.json();
 		return shoes;
 	} catch (error) {
@@ -12,7 +13,7 @@ export async function fetchAllShoes() {
 
 export async function fetchShoeById(id) {
 	try {
-		const res = await fetch(`${NIKEDAS_API}/${id}`);
+		const res = await fetch(`${NIKEDAS_API_SHOES}/${id}`);
 		const shoe = await res.json();
 		return shoe;
 	} catch (error) {
@@ -21,7 +22,7 @@ export async function fetchShoeById(id) {
 }
 export async function deleteListing(id) {
 	try {
-		const res = await fetch(`${NIKEDAS_API}/${id}`, {
+		const res = await fetch(`${NIKEDAS_API_SHOES}/${id}`, {
 			method: "DELETE",
 		});
 		if (!res.ok) {
@@ -34,14 +35,14 @@ export async function deleteListing(id) {
 	}
 }
 export async function createShoe(listing) {
-	try {
-		const options = {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(listing),
-		};
+	const options = {
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify(listing),
+	};
 
-		const res = await fetch(`${NIKEDAS_API}`, options);
+	try {
+		const res = await fetch(`${NIKEDAS_API_SHOES}`, options);
 		const shoe = await res.json();
 		return shoe;
 	} catch (error) {
@@ -50,14 +51,14 @@ export async function createShoe(listing) {
 }
 
 export async function updateShoe(id, listing) {
-	try {
-		const options = {
-			method: "PUT",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(listing),
-		};
+	const options = {
+		method: "PUT",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify(listing),
+	};
 
-		const res = await fetch(`${NIKEDAS_API}/${id}`, options);
+	try {
+		const res = await fetch(`${NIKEDAS_API_SHOES}/${id}`, options);
 		const shoe = await res.json();
 		return shoe;
 	} catch (error) {

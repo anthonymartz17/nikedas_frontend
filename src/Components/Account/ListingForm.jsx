@@ -10,12 +10,10 @@ import {
 } from "../../Services/shoes.services.js";
 import { useAuth } from "../../Context/AuthContext.jsx";
 
-// import Input from "./Input.jsx";
-
-// const user_id = 2;
-
 export default function ListingForm({ formHeader }) {
 	const { currentUser } = useAuth();
+	const { id } = useParams();
+	const navigate = useNavigate();
 
 	const [listingForm, setListingForm] = useState({
 		brand: "",
@@ -32,8 +30,6 @@ export default function ListingForm({ formHeader }) {
 		secondary_img: [],
 		seller_id: null,
 	});
-	const { id } = useParams();
-	const navigate = useNavigate();
 
 	async function getListing(id) {
 		try {
@@ -51,8 +47,8 @@ export default function ListingForm({ formHeader }) {
 	}, [id]);
 
 	function handleChange(e) {
-		const value = e.target.value;
-		setListingForm({ ...listingForm, [e.target.id]: e.target.value });
+		const { id, value } = e.target;
+		setListingForm({ ...listingForm, [id]: value });
 	}
 
 	async function handleSubmit(e) {
@@ -62,6 +58,7 @@ export default function ListingForm({ formHeader }) {
 		const sizeToFloat = parseFloat(size);
 
 		if (id) {
+
 			try {
 				const res = await updateShoe(id, { ...listingForm, size: sizeToFloat });
 				navigate(`/account/listing/${id}`);
@@ -71,12 +68,13 @@ export default function ListingForm({ formHeader }) {
 			}
 		} else {
 			try {
+
 				const res = await createShoe({
 					...listingForm,
 					size: sizeToFloat,
-					uid: currentUser.uid,
+					seller_id: currentUser.uid,
 				});
-				console.log(res);
+
 				navigate(`/account/listing/${res.id}`);
 				setListingForm({});
 			} catch (error) {
