@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
+
 import { auth } from "../../firebase-config";
+
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
@@ -32,19 +34,9 @@ export default function AuthContextProvider({ children }) {
 		return sendPasswordResetEmail(auth, email);
 	}
 
-	// async function deleteUserAuth(uid) {
-	// 	try {
-	// 		await admin.auth().deleteUser(uid);
-	// 		console.log("Successfully deleted user");
-	// 		return "Successfully deleted user";
-	// 	} catch (error) {
-	// 		return error;
-	// 	}
-	// }
-
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
-			console.log(auth,'auth')
+			console.log(auth, "auth");
 			setCurrentUser(user);
 		});
 

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Alert({
 	modalOpen,
+	itemToDelete,
 	setModalOpen,
 	onHandleDeleteListing,
 }) {
@@ -21,7 +22,7 @@ export default function Alert({
 					tabIndex="-1"
 					className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center h-screen bg-gray-700 bg-opacity-50"
 				>
-					<div className="relative p-4 max-w-md bg-white rounded-lg shadow-lg dark:bg-gray-700">
+					<div className="relative p-4 max-w-md bg-white rounded-lg shadow-lg dark:bg-gray-800">
 						<button
 							type="button"
 							className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -36,7 +37,11 @@ export default function Alert({
 								warning
 							</span>
 							<h3 className="mb-5 text-lg font-normal text-white-500 dark:text-white">
-								Are you sure you want to delete this product?
+								Are you sure you want to delete product{" "}
+								<span className="text-yellow-600">
+									{itemToDelete.brand} {itemToDelete.model}{" "}
+									{itemToDelete.product_number}?
+								</span>
 							</h3>
 							<div className="flex poppins-regular">
 								<button

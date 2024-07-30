@@ -6,7 +6,7 @@
 
 .auth {
 	width: 80%;
-  max-width: 25em;
+	max-width: 25em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -34,11 +34,6 @@ input {
 
 .forgot_password {
 	align-self: start;
-}
-
-.auth_form button {
-	width: 100px;
-	align-self: end;
 }
 
 .create_account {

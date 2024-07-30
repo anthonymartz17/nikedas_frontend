@@ -1,6 +1,6 @@
 import "./Nav.css";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchProduct from "../Header/SearchProduct";
 import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
@@ -9,7 +9,8 @@ import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
 import { useAuth } from "../../Context/AuthContext";
 
 export default function Nav() {
-	const { currentUser } = useAuth();
+	const navigate = useNavigate();
+	const { currentUser, logout } = useAuth();
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,6 +20,10 @@ export default function Nav() {
 
 	function toggleMenu() {
 		setIsMenuOpen((prev) => !prev);
+	}
+	async function handleLogout() {
+		logout();
+		navigate("/auth");
 	}
 	useEffect(() => {
 		document.body.classList.toggle("no_scroll");
@@ -53,21 +58,27 @@ export default function Nav() {
 			<div className="navbar_desktop">
 				<div className="navbar_desktop_top">
 					{currentUser ? (
-						<div className="auth_btn_container poppins-light ">
-							<Link to="/account">
-								<li className="link_item">
-									<span>Dashboard</span>
-								</li>
-							</Link>
-							<Link to="/account/profile">
-								<li className="link_item">
-									<span>Profile</span>
-								</li>
-							</Link>
+						<div className="flex poppins-light w-full justify-between">
+							<span className="navbar_mobile_menu_back">
+								<span className="material-symbols-outlined">person</span>{" "}
+								<span className="text-xs">{currentUser?.email}</span>
+							</span>
+							<div className="auth_btn_container">
+								<Link to="/account">
+									<li className="link_item">
+										<span>Dashboard</span>
+									</li>
+								</Link>
+								<Link to="/account/profile">
+									<li className="link_item">
+										<span>Profile</span>
+									</li>
+								</Link>
 
-							<li className="link_item">
-								<span>log out</span>
-							</li>
+								<li onClick={() => handleLogout()} className="link_item">
+									<span>log out</span>
+								</li>
+							</div>
 						</div>
 					) : (
 						<div className="auth_btn_container poppins-light ">
@@ -84,17 +95,17 @@ export default function Nav() {
 							alt="nikedas_logo"
 						/>
 					</Link>
-					<NavDesktop />
-					<input
-						onClick={() => toggleSearch()}
-						// disabled
-						style={{ width: "20%" }}
-						className="search_searchbar"
-						type="text"
-						placeholder="Search"
-					/>
-					<div className="shopping_cart">
-						<span className="material-symbols-outlined">local_mall</span>
+					<div className="navbar_desktop_bottom_navigation">
+						<NavDesktop />
+						<input
+							onClick={() => toggleSearch()}
+							className="navbar_desktop_bottom_search_bar"
+							type="text"
+							placeholder="Search"
+						/>
+						<div className="shopping_cart">
+							<span className="material-symbols-outlined">local_mall</span>
+						</div>
 					</div>
 				</div>
 			</div>

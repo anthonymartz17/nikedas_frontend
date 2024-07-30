@@ -1,10 +1,20 @@
 const NIKEDAS_API_USERS = import.meta.env.VITE_APP_USERS;
+const NIKEDAS_API_SHOES = import.meta.env.VITE_APP_SHOES;
 
 export async function fetchUserById(id) {
 	try {
 		const res = await fetch(`${NIKEDAS_API_USERS}/${id}`);
 		const shoe = await res.json();
 		return shoe;
+	} catch (error) {
+		throw error;
+	}
+}
+export async function fetchSellerListings(uid) {
+	try {
+		const res = await fetch(`${NIKEDAS_API_SHOES}/seller/${uid}`);
+		const shoes = await res.json();
+		return shoes;
 	} catch (error) {
 		throw error;
 	}
