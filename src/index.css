@@ -18,6 +18,7 @@ body {
 a {
 	text-decoration: none;
 	color: var(--light);
+	padding: 0;
 }
 
 /* buttons */
@@ -31,12 +32,13 @@ a {
 	cursor: pointer;
 	display: block;
 	font-family: "Poppins", sans-serif;
-	/* width: 100%; */
+	min-width: 10em;
 }
 
 .global_card {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	padding: 10px 1em;
+	border-radius: 5px;
 }
 
 .global_input_field {

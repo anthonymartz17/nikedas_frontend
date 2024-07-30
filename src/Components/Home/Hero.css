@@ -26,6 +26,9 @@
 	display: none;
 	text-align: center;
 	height: 100%;
+	background-color: rgba(128, 128, 128, 0.091);
+	box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.225); 
+
 }
 .hero-img {
 	max-width: 100%;

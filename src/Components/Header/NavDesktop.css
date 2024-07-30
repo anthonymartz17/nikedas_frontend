@@ -2,6 +2,7 @@
 	color: black;
 	position: relative;
 
+
 }
 
 .navigation_desktop_links {
@@ -24,7 +25,7 @@
 
 .navigation_desktop_dropdown {
 	position: fixed;
-	top: 75px;
+	top: 100px;
 	left: 0;
 	right: 0;
 	min-height: 25em;
@@ -36,7 +37,7 @@
 	place-items: center;
 	transform: translateY(-20px);
 	transition: opacity 0.2s ease, transform 0.3s ease, visibility 0.3s ease;
-	z-index: 2;
+	/* z-index: 2; */
 }
 
 .navigation_desktop_dropdown.visible {

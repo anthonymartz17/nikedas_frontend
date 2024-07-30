@@ -1,6 +1,6 @@
 import "./Nav.css";
 import React, { useState, useEffect } from "react";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchProduct from "../Header/SearchProduct";
 import NavDesktop from "../Header/NavDesktop";
 import NavMobile from "./NavMobile";
@@ -9,7 +9,7 @@ import logoFullDark from "../../assets/logos_nikeda/nikedas_dark.png";
 import { useAuth } from "../../Context/AuthContext";
 
 export default function Nav() {
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	const { currentUser, logout } = useAuth();
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,17 +95,17 @@ export default function Nav() {
 							alt="nikedas_logo"
 						/>
 					</Link>
-					<NavDesktop />
-					<input
-						onClick={() => toggleSearch()}
-						// disabled
-						style={{ width: "20%" }}
-						className="search_searchbar"
-						type="text"
-						placeholder="Search"
-					/>
-					<div className="shopping_cart">
-						<span className="material-symbols-outlined">local_mall</span>
+					<div className="navbar_desktop_bottom_navigation">
+						<NavDesktop />
+						<input
+							onClick={() => toggleSearch()}
+							className="navbar_desktop_bottom_search_bar"
+							type="text"
+							placeholder="Search"
+						/>
+						<div className="shopping_cart">
+							<span className="material-symbols-outlined">local_mall</span>
+						</div>
 					</div>
 				</div>
 			</div>

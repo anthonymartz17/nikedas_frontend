@@ -18,13 +18,13 @@ export default function ListingForm({ formHeader }) {
 	const [listingForm, setListingForm] = useState({
 		brand: "",
 		model: "",
-		size: 0,
+		size: "",
 		color: "",
 		gender: "",
 		category: "",
-		price: 0,
+		price: "",
 		product_number: "",
-		sku: 0,
+		sku: "",
 		description: "",
 		primary_img: "",
 		secondary_img: [],
@@ -58,7 +58,6 @@ export default function ListingForm({ formHeader }) {
 		const sizeToFloat = parseFloat(size);
 
 		if (id) {
-
 			try {
 				const res = await updateShoe(id, { ...listingForm, size: sizeToFloat });
 				navigate(`/account/listing/${id}`);
@@ -68,7 +67,6 @@ export default function ListingForm({ formHeader }) {
 			}
 		} else {
 			try {
-
 				const res = await createShoe({
 					...listingForm,
 					size: sizeToFloat,
@@ -85,16 +83,16 @@ export default function ListingForm({ formHeader }) {
 
 	return (
 		<div className="form_page global_card poppins-regular">
-			<h2 className="form_header">{formHeader}</h2>
+			<h2 className="form_header poppins-semibold">{formHeader}</h2>
 			<form className="listing_form" onSubmit={handleSubmit}>
 				<div className="flex_row">
 					<div className="flex_item">
 						<label>
 							Brand:
 							<input
-								className="global_input_field"
+								className="global_input_field poppins-light"
 								type="text"
-								placeholder="Brand"
+								placeholder="Enter brand"
 								value={listingForm.brand}
 								onChange={handleChange}
 								id="brand"
@@ -108,7 +106,7 @@ export default function ListingForm({ formHeader }) {
 							Model:
 							<input
 								type="text"
-								placeholder="Model"
+								placeholder="Enter model"
 								value={listingForm.model}
 								onChange={handleChange}
 								id="model"
@@ -124,7 +122,7 @@ export default function ListingForm({ formHeader }) {
 							Size:
 							<input
 								type="number"
-								placeholder="Size"
+								placeholder="Enter size"
 								value={listingForm.size}
 								onChange={handleChange}
 								id="size"
@@ -132,13 +130,26 @@ export default function ListingForm({ formHeader }) {
 							/>
 						</label>
 					</div>
-
+					<div className="flex_row">
+						<div className="flex_item">
+							<label>
+								Price:
+								<input
+									type="number"
+									placeholder="150.00"
+									value={listingForm.price}
+									onChange={handleChange}
+									id="price"
+								/>
+							</label>
+						</div>
+					</div>
 					<div className="flex_item">
 						<label>
 							Color:
 							<input
 								type="text"
-								placeholder="color"
+								placeholder="Enter color"
 								value={listingForm.color}
 								onChange={handleChange}
 								id="color"
@@ -154,7 +165,6 @@ export default function ListingForm({ formHeader }) {
 							Gender:
 							<br />
 							<select
-								className="text-black"
 								type="text"
 								value={listingForm.gender}
 								onChange={handleChange}
@@ -174,7 +184,7 @@ export default function ListingForm({ formHeader }) {
 							Category:
 							<input
 								type="text"
-								placeholder="Category"
+								placeholder="Enter category"
 								value={listingForm.category}
 								onChange={handleChange}
 								id="category"
@@ -190,7 +200,7 @@ export default function ListingForm({ formHeader }) {
 							Product #:
 							<input
 								type="text"
-								placeholder="Product #"
+								placeholder="Enter product #"
 								value={listingForm.product_number}
 								onChange={handleChange}
 								id="product_number"
@@ -204,7 +214,7 @@ export default function ListingForm({ formHeader }) {
 							SKU:
 							<input
 								type="number"
-								placeholder="sku"
+								placeholder="Enter sku"
 								value={listingForm.sku}
 								onChange={handleChange}
 								id="sku"
@@ -213,20 +223,21 @@ export default function ListingForm({ formHeader }) {
 						</label>
 					</div>
 				</div>
-
-				<label className="description">
-					Description:
-					<br />
-					<textarea
-						type="textarea"
-						placeholder="Description"
-						value={listingForm.description}
-						onChange={handleChange}
-						id="description"
-						required
-						style={{ width: "100%" }}
-					/>
-				</label>
+				<div className="flex_row">
+					<label className="description">
+						Description:
+						<br />
+						<textarea
+							type="textarea"
+							placeholder="Enter description"
+							value={listingForm.description}
+							onChange={handleChange}
+							id="description"
+							required
+							style={{ width: "100%" }}
+						/>
+					</label>
+				</div>
 
 				<div className="flex_row">
 					<div className="flex_item">
@@ -234,7 +245,7 @@ export default function ListingForm({ formHeader }) {
 							Primary Img URL:
 							<input
 								type="text"
-								placeholder="http://www.someplaceonthenet.com/img.jpg"
+								placeholder="Enter img URL"
 								value={listingForm.primary_img}
 								onChange={handleChange}
 								id="primary_img"
@@ -258,51 +269,35 @@ export default function ListingForm({ formHeader }) {
 				</div>
 
 				<div className="flex_row">
-					<div className="flex_item">
-						<label>
-							Primary Img Preview:
-							<img src={listingForm.primary_img} />
-						</label>
-					</div>
-
-					<div className="flex_item">
-						<label>
-							Secondary Images Previews:
-							<div className="secondary_img_preview">
-								{listingForm.secondary_img.map((url) => (
-									<img src={url} key={url} />
-								))}
-							</div>
-						</label>
-					</div>
+					{listingForm.primary_img && (
+						<div className="flex_item">
+							<label>
+								Primary Img Preview:
+								<img src={listingForm.primary_img} className="w-20" />
+							</label>
+						</div>
+					)}
+					{listingForm.secondary_img && (
+						<div className="flex_item">
+							<label>
+								Secondary Images Previews:
+								<div className="secondary_img_preview">
+									{listingForm.secondary_img.map((url) => (
+										<img src={url} key={url} className="w-20" />
+									))}
+								</div>
+							</label>
+						</div>
+					)}
 				</div>
 
-				<div className="flex_row">
-					<div className="flex_item">
-						<label>
-							Price:
-							<input
-								type="number"
-								placeholder="150.00"
-								value={listingForm.price}
-								onChange={handleChange}
-								id="price"
-							/>
-						</label>
-					</div>
-				</div>
-
-				<div className="flex_row">
-					<div className="form_button flex_item ">
-						<Link to="/account" className="w-full">
-							<button className="btn btn_mute_dark">Cancel</button>
-						</Link>
-					</div>
-					<div className="form_button flex_item">
-						<button className="btn_bg_dark">
-							{id ? "Update" : "Create"} Listing
-						</button>
-					</div>
+				<div className="listing_form_buttons">
+					<Link to="/account" className="btn btn_mute_dark">
+						Cancel
+					</Link>
+					<button className=" btn btn_bg_dark">
+						{id ? "Update" : "Create"} Listing
+					</button>
 				</div>
 			</form>
 		</div>

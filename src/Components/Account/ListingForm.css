@@ -1,80 +1,82 @@
 .form_page {
-  width: 70%;
-  margin: 30px auto;
- 
+	width: 90%;
 }
 
 .form_header {
-  font-weight: 700;
-  text-align: center;
-  margin: 20px 0;
+	text-align: center;
+	margin-block: 20px;
 }
 
 .listing_form {
-  /* width: 70%; */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  row-gap: 30px;;
 }
 
-.listing_form * {
-  box-sizing: border-box;
-}
-
-.listing_form input, .listing_form select, .listing_form textarea
- {
-  border: 1px solid rgba(128, 128, 128, 0.456);
-  border-radius: 5px;
-  padding: 1em;
-  margin-block: .5em;
+.listing_form input,
+.listing_form textarea {
+	border-radius: 5px;
+	margin-block: 0.5em;
+	font-weight: 300;
+	font-style: normal;
+	width: 100%;
 }
 
 .flex_row {
-  flex: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 .flex_item {
-  min-width: 100px;
-  flex: 100%;
-  /* display: inline-block; */
+	flex: 1;
 }
 
-.listing_form input, .listing_form select, .listing_form textarea
- {
-  border: 1px solid gray;
-  border-radius: 50px;
-  text-indent: 20px;
+.listing_form input,
+.listing_form select,
+.listing_form textarea {
+	border: 1px solid rgba(128, 128, 128, 0.408);
+	border-radius: 5px;
+	width: 100%;
+	padding: 1em;
 }
 
-select {
-  width: 100%;
-  height: 30px;
+.flex_item select {
+	width: 100%;
+	padding-block: 0.3em;
+	margin-block: 0.5em;
+	font-weight: 300;
 }
 
 .description {
-  flex: 100%
+	flex: 100%;
 }
 
-.form_button {
-  flex: 100%;
-  text-indent: 0;
+.listing_form_buttons {
+	width: 100%;
+	margin-bottom: 1em;
+	height: 10vh;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
 }
 
-div button {
-  width: 100%;
+@media (min-width: 768px) {
+	.flex_row {
+		flex-direction: row;
+	}
+	.listing_form_buttons {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
+@media (min-width: 992px) {
+	.navbar_search_product_mobile {
+		display: flex;
+		justify-content: center;
+	}
 
-/* mobile to desktop */
-@media (width >= 500px) {
-  .flex_item {
-    flex: 20%;
-  }
-
-  /* .listing_form {
-    background: gray;
-  } */
+	.flex_row {
+		display: flex;
+		background-color: blue;
+	}
 }

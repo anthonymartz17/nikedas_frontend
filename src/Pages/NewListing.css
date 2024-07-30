@@ -1,0 +1,7 @@
+.new_listing_page{
+  display: grid;
+  place-items: center;
+  padding-block: 4em 2em;
+}
+
+

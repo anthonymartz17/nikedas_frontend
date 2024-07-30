@@ -97,6 +97,12 @@
 .navbar_desktop {
 	display: none;
 }
+.navbar_desktop_bottom_search_bar {
+	border: 1px solid rgba(128, 128, 128, 0.392);
+	border-radius: 20px;
+	padding-inline: 1em;
+	width: 40%;
+}
 /* Medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
 }
@@ -129,10 +135,16 @@
 	}
 	.navbar_desktop_bottom {
 		color: var(--dark);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 10% 1fr;
 		padding: 10px 3em;
+	}
+	.navbar_desktop_bottom_navigation {
+		display: flex;
+		justify-self: end;
+		justify-content: space-between;
+		width: 80%;
+		align-items: center;
 	}
 
 	.auth_btn_container {
