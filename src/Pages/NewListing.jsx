@@ -1,6 +1,7 @@
 import React from "react";
 import ListingForm from "../Components/Account/ListingForm";
-import "./NewListing.css"
+
+import "./NewListing.css";
 export default function NewListing() {
 	return (
 		<section className="new_listing_page">

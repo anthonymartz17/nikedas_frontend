@@ -251,7 +251,10 @@ export default function ListingForm({ formHeader }) {
 								id="primary_img"
 								required
 							/>
-						</label>
+						</label>{" "}
+						{listingForm.primary_img && (
+							<img src={listingForm.primary_img} className="w-20" />
+						)}
 					</div>
 
 					<div className="flex_item">
@@ -265,30 +268,19 @@ export default function ListingForm({ formHeader }) {
 								id="secondary_img"
 							/>
 						</label>
+						{/* {listingForm.secondary_img && (
+							<div className="flex_item">
+								<label>
+									Secondary Images Previews:
+									<div className="secondary_img_preview">
+										{listingForm.secondary_img.map((url) => (
+											<img src={url} key={url} className="w-20" />
+										))}
+									</div>
+								</label>
+							</div>
+						)} */}
 					</div>
-				</div>
-
-				<div className="flex_row">
-					{listingForm.primary_img && (
-						<div className="flex_item">
-							<label>
-								Primary Img Preview:
-								<img src={listingForm.primary_img} className="w-20" />
-							</label>
-						</div>
-					)}
-					{listingForm.secondary_img && (
-						<div className="flex_item">
-							<label>
-								Secondary Images Previews:
-								<div className="secondary_img_preview">
-									{listingForm.secondary_img.map((url) => (
-										<img src={url} key={url} className="w-20" />
-									))}
-								</div>
-							</label>
-						</div>
-					)}
 				</div>
 
 				<div className="listing_form_buttons">
