@@ -1,0 +1,11 @@
+.notFound {
+	display: flex;
+	justify-content: center;
+	margin-top: 3em;
+}
+.notFound_content {
+	width: fit-content;
+	width: 25em;
+	display: grid;
+	justify-content: center;
+}
