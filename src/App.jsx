@@ -27,12 +27,13 @@ import Store from "./Pages/Store.jsx";
 import AboutSeller from "./Pages/AboutSeller.jsx";
 import NotFound from "./Pages/NotFound.jsx";
 import AccountDashboard from "./Components/Account/AccountDashboard.jsx";
+
 import AuthContextProvider from "./Context/AuthContext.jsx";
 function App() {
 	return (
 		<AuthContextProvider>
 			<Router>
-				<div className="layout">
+				<div>
 					<header>
 						<Nav />
 					</header>

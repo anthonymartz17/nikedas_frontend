@@ -24,7 +24,6 @@ export default function ListingForm({ formHeader }) {
 		category: "",
 		price: "",
 		product_number: "",
-		sku: "",
 		description: "",
 		primary_img: "",
 		secondary_img: [],
@@ -74,7 +73,7 @@ export default function ListingForm({ formHeader }) {
 				});
 
 				navigate(`/account/listing/${res.id}`);
-				setListingForm({});
+				// setListingForm({});
 			} catch (error) {
 				throw error;
 			}
@@ -204,20 +203,6 @@ export default function ListingForm({ formHeader }) {
 								value={listingForm.product_number}
 								onChange={handleChange}
 								id="product_number"
-								required
-							/>
-						</label>
-					</div>
-
-					<div className="flex_item">
-						<label>
-							SKU:
-							<input
-								type="number"
-								placeholder="Enter sku"
-								value={listingForm.sku}
-								onChange={handleChange}
-								id="sku"
 								required
 							/>
 						</label>

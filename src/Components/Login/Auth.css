@@ -1,21 +1,14 @@
 .authentication_page {
-	height: 100%;
-	display: grid;
-	place-items: center;
-}
-
-.auth {
-	width: 80%;
-	max-width: 25em;
+	height: 100vh;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	gap: 1em;
-	text-align: center;
+	justify-content: center;
+	padding-block: 5em;
 }
 
 .auth {
 	width: 80%;
+	height: fit-content;
+	text-align: center;
 }
 
 .auth_form {
@@ -39,4 +32,10 @@ input {
 .create_account {
 	color: black;
 	text-decoration: none;
+}
+
+@media (min-width: 768px) {
+	.auth {
+		width: 400px;
+	}
 }

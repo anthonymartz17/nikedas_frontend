@@ -1,16 +1,19 @@
 import "./NavMobile.css";
 import { Link, useNavigate } from "react-router-dom";
-
 import categories from "./navigation";
+
 import { useAuth } from "../../Context/AuthContext";
+
 export default function NavMobile({ onToggleMenu }) {
 	const navigate = useNavigate();
+
 	const { currentUser, logout } = useAuth();
 	async function handleLogout() {
 		logout();
 		onToggleMenu();
 		navigate("/auth");
 	}
+
 	return (
 		<div className="nav_mobile poppins-light">
 			<div
@@ -18,10 +21,12 @@ export default function NavMobile({ onToggleMenu }) {
 					currentUser ? "justify-between" : "justify-end"
 				}`}
 			>
-				<span className="navbar_mobile_menu_back">
-					<span className="material-symbols-outlined">person</span>{" "}
-					<span className="text-xs">{currentUser?.email}</span>
-				</span>
+				{currentUser && (
+					<span className="navbar_mobile_menu_back">
+						<span className="material-symbols-outlined">person</span>{" "}
+						<span className="text-xs">{currentUser?.email}</span>
+					</span>
+				)}
 				<span onClick={onToggleMenu} className="material-symbols-outlined ">
 					close
 				</span>
@@ -45,13 +50,17 @@ export default function NavMobile({ onToggleMenu }) {
 						<Link to="/">
 							<li onClick={() => onToggleMenu()} className="link_item">
 								<span>Nikedas</span>
-								<span className="material-symbols-outlined">team_dashboard</span>
+								<span className="material-symbols-outlined">
+									team_dashboard
+								</span>
 							</li>
 						</Link>
 						<Link to="/account">
 							<li onClick={() => onToggleMenu()} className="link_item">
 								<span>Dashboard</span>
-								<span className="material-symbols-outlined">bar_chart_4_bars</span>
+								<span className="material-symbols-outlined">
+									bar_chart_4_bars
+								</span>
 							</li>
 						</Link>
 						<Link to="/account/profile">

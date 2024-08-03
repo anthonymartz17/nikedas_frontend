@@ -53,17 +53,36 @@ export default function NavDesktop() {
 							<h4 className="navigation_desktop_dropdown_title poppins-semibold">
 								{detail.title}
 							</h4>
-							<ul className="navigation_desktop_dropdown_details poppins-light ">
-								{detail.items.map((item, idx) => (
-									<li
-										onClick={() => searchShoes()}
-										className="navigation_desktop_dropdown_details_item"
-										key={idx}
-									>
-										{item.name}
-									</li>
-								))}
-							</ul>
+
+							{detail.title === "Brands" ? (
+								<ul className="navigation_desktop_dropdown_details_brands">
+									{detail.items.map((item, idx) => (
+										<li
+											onClick={() => searchShoes()}
+											className="navigation_desktop_dropdown_details_brands_item"
+											key={idx}
+										>
+											<img
+												className="w-32"
+												src={item.logo}
+												alt="image of brand"
+											/>
+										</li>
+									))}
+								</ul>
+							) : (
+								<ul className="navigation_desktop_dropdown_details poppins-light ">
+									{detail.items.map((item, idx) => (
+										<li
+											onClick={() => searchShoes()}
+											className="navigation_desktop_dropdown_details_item"
+											key={idx}
+										>
+											{item.name}
+										</li>
+									))}
+								</ul>
+							)}
 						</div>
 					))}
 				</ul>
