@@ -1,4 +1,12 @@
-import Nike from "../../assets/brands/Nike.svg";
+import nike from "../../assets/brands/nike.png";
+import adidas from "../../assets/brands/adidas.png";
+import puma from "../../assets/brands/puma.png";
+import reebok from "../../assets/brands/reebok.png";
+import newBalance from "../../assets/brands/new_balance.png";
+import timberland from "../../assets/brands/timberland.png";
+import converse from "../../assets/brands/converse.png";
+import vans from "../../assets/brands/vans.png";
+import skechers from "../../assets/brands/skechers.png";
 
 export default [
 	{
@@ -162,15 +170,15 @@ export default [
 			{
 				title: "Brands",
 				items: [
-					{ name: "Nike", img: Nike },
-					{ name: "Adidas" },
-					{ name: "Puma" },
-					{ name: "Reebok" },
-					{ name: "New Balance" },
-					{ name: "Under Armour" },
-					{ name: "Converse" },
-					{ name: "Vans" },
-					{ name: "Skechers" },
+					{ name: "Nike", logo: nike },
+					{ name: "Adidas", logo: adidas },
+					{ name: "Puma", logo: puma },
+					{ name: "Reebok", logo: reebok },
+					{ name: "New Balance", logo: newBalance },
+					{ name: "Timberland", logo: timberland },
+					{ name: "Converse", logo: converse },
+					{ name: "Vans", logo: vans },
+					{ name: "Skechers", logo: skechers },
 				],
 			},
 		],

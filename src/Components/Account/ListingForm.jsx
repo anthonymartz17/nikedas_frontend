@@ -24,7 +24,6 @@ export default function ListingForm({ formHeader }) {
 		category: "",
 		price: "",
 		product_number: "",
-		sku: "",
 		description: "",
 		primary_img: "",
 		secondary_img: [],
@@ -74,7 +73,7 @@ export default function ListingForm({ formHeader }) {
 				});
 
 				navigate(`/account/listing/${res.id}`);
-				setListingForm({});
+				// setListingForm({});
 			} catch (error) {
 				throw error;
 			}
@@ -208,20 +207,6 @@ export default function ListingForm({ formHeader }) {
 							/>
 						</label>
 					</div>
-
-					<div className="flex_item">
-						<label>
-							SKU:
-							<input
-								type="number"
-								placeholder="Enter sku"
-								value={listingForm.sku}
-								onChange={handleChange}
-								id="sku"
-								required
-							/>
-						</label>
-					</div>
 				</div>
 				<div className="flex_row">
 					<label className="description">
@@ -251,7 +236,10 @@ export default function ListingForm({ formHeader }) {
 								id="primary_img"
 								required
 							/>
-						</label>
+						</label>{" "}
+						{listingForm.primary_img && (
+							<img src={listingForm.primary_img} className="w-20" />
+						)}
 					</div>
 
 					<div className="flex_item">
@@ -265,30 +253,19 @@ export default function ListingForm({ formHeader }) {
 								id="secondary_img"
 							/>
 						</label>
+						{/* {listingForm.secondary_img && (
+							<div className="flex_item">
+								<label>
+									Secondary Images Previews:
+									<div className="secondary_img_preview">
+										{listingForm.secondary_img.map((url) => (
+											<img src={url} key={url} className="w-20" />
+										))}
+									</div>
+								</label>
+							</div>
+						)} */}
 					</div>
-				</div>
-
-				<div className="flex_row">
-					{listingForm.primary_img && (
-						<div className="flex_item">
-							<label>
-								Primary Img Preview:
-								<img src={listingForm.primary_img} className="w-20" />
-							</label>
-						</div>
-					)}
-					{listingForm.secondary_img && (
-						<div className="flex_item">
-							<label>
-								Secondary Images Previews:
-								<div className="secondary_img_preview">
-									{listingForm.secondary_img.map((url) => (
-										<img src={url} key={url} className="w-20" />
-									))}
-								</div>
-							</label>
-						</div>
-					)}
 				</div>
 
 				<div className="listing_form_buttons">

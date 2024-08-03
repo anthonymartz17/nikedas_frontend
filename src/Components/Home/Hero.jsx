@@ -1,8 +1,8 @@
 import "./Hero.css";
 // import heroShoe from "../../../public/assets/hero-shoe-01.png";
-import heroShoe from "../../assets/graphics/hero_shoes.png";
+import heroShoe from "../../assets/brands/hero_shoes.png";
 import { Link } from "react-router-dom";
-import fire from "../../assets/graphics/fire.svg";
+import fire from "../../assets/brands/fire.svg";
 export default function Hero() {
 	return (
 		<section className="hero">

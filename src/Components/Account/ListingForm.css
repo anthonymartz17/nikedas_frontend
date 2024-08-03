@@ -70,6 +70,9 @@
 	}
 }
 @media (min-width: 992px) {
+	.form_page {
+		max-width: 668px;
+	}
 	.navbar_search_product_mobile {
 		display: flex;
 		justify-content: center;
@@ -77,6 +80,5 @@
 
 	.flex_row {
 		display: flex;
-		background-color: blue;
 	}
 }

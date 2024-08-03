@@ -43,7 +43,7 @@ export default function Alert({
 									{itemToDelete.product_number}?
 								</span>
 							</h3>
-							<div className="flex poppins-regular">
+							<div className="flex poppins-regular justify-center">
 								<button
 									data-modal-hide="popup-modal"
 									type="button"

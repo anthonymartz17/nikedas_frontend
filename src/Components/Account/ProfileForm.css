@@ -1,27 +1,26 @@
 .profile_form {
-  width: 50%;
-  margin: 20px auto;
-  flex-direction: column;
+	/* flex: 100%; */
+width: 50%;
 }
-.profile_form * {
-  flex: 100%;
-}
-
-#email {
-  color: rgb(189, 187, 187);
+.form_page {
+  height: fit-content;
 }
 
 .flex_item textarea {
-  width: 100%;
-  padding-top: 10px;;
+	/* width: 100%; */
+	/* padding-top: 10px; */
 }
-
+/* 
 .checkbox_row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+} */
+
+.checkbox_row label {
+	text-align: center;
 }
 
-.checkbox_row label{
-  text-align: center;
+@media (min-width: 768px) {
+	
 }

@@ -30,6 +30,7 @@ export default function AccountTable({}) {
 	}
 
 	async function getSellerListings(id) {
+		console.log(id,'esta?')
 		try {
 			const shoesData = await fetchSellerListings(id);
 			setListings(shoesData);

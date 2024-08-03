@@ -1,8 +1,6 @@
 .navigation_desktop {
 	color: black;
 	position: relative;
-
-
 }
 
 .navigation_desktop_links {
@@ -37,7 +35,7 @@
 	place-items: center;
 	transform: translateY(-20px);
 	transition: opacity 0.2s ease, transform 0.3s ease, visibility 0.3s ease;
-	/* z-index: 2; */
+	z-index: 5;
 }
 
 .navigation_desktop_dropdown.visible {
@@ -71,4 +69,16 @@
 }
 
 @media (min-width: 992px) {
+	.navigation_desktop_dropdown_details_brands {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
+		width: 70vw;
+		margin-top: 1em;
+	}
+	.navigation_desktop_dropdown_details_brands li {
+		box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+			rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+		cursor: pointer;
+	}
 }
