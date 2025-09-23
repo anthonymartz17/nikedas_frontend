@@ -1,3 +1,5 @@
+// Initialize Firebase
+import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -10,8 +12,6 @@ const firebaseConfig = {
 	measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
-import { initializeApp } from "firebase/app";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

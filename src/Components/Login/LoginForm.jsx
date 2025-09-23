@@ -22,6 +22,7 @@ export default function LoginForm() {
 
 		try {
 			const response = await login(loginForm.email, loginForm.password);
+			console.log(response,'resp')
 			// setLoggedinUserData(email);
 			setLoginForm({});
 			navigate("/account");

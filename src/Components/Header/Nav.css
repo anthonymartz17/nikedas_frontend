@@ -1,9 +1,7 @@
 .navbar {
 	background-color: var(--dark);
 	height: 100%;
-	padding-inline: 1em;
-	
-
+	padding: 0.5em 1em;
 }
 
 .navbar_mobile {
@@ -109,6 +107,9 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
 }
 @media (min-width: 768px) {
+	.navbar {
+		padding: 0 1em;
+	}
 	.navbar_mobile {
 		display: none;
 	}
@@ -145,8 +146,10 @@
 		display: flex;
 		justify-self: end;
 		justify-content: space-between;
-		width: 80%;
 		align-items: center;
+		width: 100%;
+		padding-left: 2em;
+		/* width: 80%; */
 	}
 
 	.auth_btn_container {
@@ -167,5 +170,9 @@
 	.navbar_search_product_mobile {
 		display: flex;
 		justify-content: center;
+	}
+
+	.navbar_desktop_bottom_navigation {
+		width: 80%;
 	}
 }

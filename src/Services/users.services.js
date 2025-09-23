@@ -10,9 +10,11 @@ export async function fetchUserById(id) {
 		throw error;
 	}
 }
-export async function fetchSellerListings(uid) {
+export async function fetchSellerListings(token) {
 	try {
-		const res = await fetch(`${NIKEDAS_API_SHOES}/seller/${uid}`);
+		const res = await fetch(`${NIKEDAS_API_SHOES}/seller/listings`, {
+			headers: { Authorization: "Bearer " + token },
+		});
 		const shoes = await res.json();
 		return shoes;
 	} catch (error) {
@@ -31,11 +33,14 @@ export async function createUser(payload) {
 		throw error;
 	}
 }
-export async function updateUser(id, profile) {
+export async function updateUser(profile, token) {
 	try {
 		const options = {
 			method: "PUT",
-			headers: { "Content-Type": "application/json" },
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: "Bearer " + token,
+			},
 			body: JSON.stringify(profile),
 		};
 

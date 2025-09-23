@@ -12,12 +12,13 @@
 
 .shoe_img_container {
 	width: 100%;
-	margin-bottom: 5px;
+	/* margin-bottom: 5px; */
 }
 
 .shoe_img_container img {
 	width: 100%;
 	object-fit: scale-down;
+
 }
 
 .shoe_description {
@@ -25,6 +26,24 @@
 	flex-direction: column;
 	font-size: small;
 	gap: 10px;
+}
+
+.shoe_variants {
+	display: flex;
+	justify-content: space-between;
+	max-width: 12em;
+	gap: 0.5em;
+	overflow-x: auto;
+	margin-bottom: .5em;
+}
+
+.shoe_variants img {
+	outline: none;
+	padding: .2em;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+  max-height: 3em;  
+  object-fit: cover;
+  flex-shrink: 0; 
 }
 
 @media (min-width: 768px) {

@@ -55,10 +55,15 @@ export default function ListingForm({ formHeader }) {
 
 		const size = listingForm.size;
 		const sizeToFloat = parseFloat(size);
+		const token = currentUser.accessToken;
 
 		if (id) {
 			try {
-				const res = await updateShoe(id, { ...listingForm, size: sizeToFloat });
+				const res = await updateShoe(
+					id,
+					{ ...listingForm, size: sizeToFloat },
+					token
+				);
 				navigate(`/account/listing/${id}`);
 				setListingForm({});
 			} catch (error) {
@@ -69,7 +74,6 @@ export default function ListingForm({ formHeader }) {
 				const res = await createShoe({
 					...listingForm,
 					size: sizeToFloat,
-					seller_id: currentUser.uid,
 				});
 
 				navigate(`/account/listing/${res.id}`);

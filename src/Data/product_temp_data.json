@@ -1,0 +1,264 @@
+[
+	{
+    "id": 1,
+    "product_number": "1000",
+    "brand": "Nike",
+    "name": "Court Borough Recraft Low Top",
+    "default_variant_id":101,
+    "price": 80.00,
+    "category": "running",
+    "category_id": 4,
+    "audience": "Little Kid",
+    "audience_id": 4,
+    "description": "Court Borough Recraft Low Top Sneaker",
+    "created_at": "2023-07-13T15:22:35",
+    "updated_at": "2023-07-18T12:47:18",
+  
+    "variants": [
+      {
+        "id": 101,
+        "color": "Black/White",
+        "total_stock": 7,  
+        "sizes": [
+          { "size": 8, "stock": 5 },
+          { "size": 9, "stock": 2 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/46/37/2/46372_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/46/37/2/46372_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/46/37/2/46372_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/46/37/2/46372_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/46/37/2/46372_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/46/37/2/46372_bottom_feed1000.jpg" }
+          
+        ]
+      },
+      {
+        "id": 102,
+        "color": "White/Grey/Blue",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/43/06/0/43060_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/43/06/0/43060_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/43/06/0/43060_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/43/06/0/43060_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/43/06/0/43060_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/43/06/0/43060_bottom_feed1000.jpg" }
+        ]
+      },
+      {
+        "id": 103,
+        "color": "White/Grey/Blue",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_back_feed1000.jpg" }
+        ]
+      }
+    ]
+  },
+	{
+    "id": 2,
+    "product_number": "10001",
+    "brand": "New Balance",
+    "name": "Slip On Retro",
+    "default_variant_id":101,
+    "price": 85.00,
+    "category": "Athletic",
+    "category_id": 5,
+    "audience": "Little Kid",
+    "audience_id": 4,
+    "description": "Kids' 237 Slip On Retro Sneaker Toddler",
+    "created_at": "2023-07-13T15:22:35",
+    "updated_at": "2023-07-18T12:47:18",
+  
+    "variants": [
+      {
+        "id": 101,
+        "color": "Red/White",
+        "total_stock": 7,  
+        "sizes": [
+          { "size": 8, "stock": 5 },
+          { "size": 9, "stock": 2 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_bottom_feed1000.jpg" }
+          
+        ]
+      },
+      {
+        "id": 102,
+        "color": "Navy/White",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_bottom_feed1000.jpg" }
+        ]
+      },
+      {
+        "id": 103,
+        "color": "Turtledove/Rose",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_bottom_feed1000.jpg" }
+        ]
+      },
+      {
+        "id": 101,
+        "color": "Red/White",
+        "total_stock": 7,  
+        "sizes": [
+          { "size": 8, "stock": 5 },
+          { "size": 9, "stock": 2 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/73/20/8/73208_bottom_feed1000.jpg" }
+          
+        ]
+      },
+      {
+        "id": 102,
+        "color": "Navy/White",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/71/26/9/71269_bottom_feed1000.jpg" }
+        ]
+      },
+      {
+        "id": 103,
+        "color": "Turtledove/Rose",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/45/01/8/45018_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/42/38/7/42387_bottom_feed1000.jpg" }
+        ]
+      }
+    ]
+  },
+	{
+    "id": 3,
+    "product_number": "10002",
+    "brand": "Adidas",
+    "name": "X_PLR Cloud Foam Slip on",
+    "default_variant_id":101,
+    "price": 45.00,
+    "category": "Athletic",
+    "category_id": 5,
+    "audience": "Little Kid",
+    "audience_id": 4,
+    "description": "Kids' X_PLR Cloud Foam Slip on Shoe Little Kid",
+    "created_at": "2023-07-13T15:22:35",
+    "updated_at": "2023-07-18T12:47:18",
+  
+    "variants": [
+      {
+        "id": 101,
+        "color": "Halo Blue/Silver",
+        "total_stock": 7,  
+        "sizes": [
+          { "size": 8, "stock": 5 },
+          { "size": 9, "stock": 2 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/8/70758_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/8/70758_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/8/70758_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/8/70758_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/8/70758_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/8/70758_bottom_feed1000.jpg" }
+          
+        ]
+      },
+      {
+        "id": 102,
+        "color": "Red/Black",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/39/76/0/39760_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/39/76/0/39760_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/39/76/0/39760_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/39/76/0/39760_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/39/76/0/39760_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/39/76/0/39760_bottom_feed1000.jpg" }
+        ]
+      },
+      {
+        "id": 103,
+        "color": "Grey/Pink/Silver",
+        "total_stock": 4,
+        "sizes": [
+          { "size": 8, "stock": 3 },
+          { "size": 9, "stock": 1 }
+        ],
+        "images": [
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/6/70756_right_feed1000.jpg", "is_main": true },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/6/70756_left_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/6/70756_pair_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/6/70756_top_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/6/70756_back_feed1000.jpg" },
+          { "url": "https://www.famousfootwear.com/blob/product-images/20000/70/75/6/70756_bottom_feed1000.jpg"}
+        ]
+      }
+    ]
+  }
+  
+]

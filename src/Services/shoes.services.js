@@ -10,6 +10,17 @@ export async function fetchAllShoes() {
 		throw error;
 	}
 }
+export async function fetchShoesBySeller(token) {
+	try {
+		const res = await fetch(`${NIKEDAS_API_SHOES}/seller-shoes`, {
+			headers: { Authorization: "Bearer " + token },
+		});
+		const shoes = await res.json();
+		return shoes;
+	} catch (error) {
+		throw error;
+	}
+}
 
 export async function fetchShoeById(id) {
 	try {
@@ -20,9 +31,12 @@ export async function fetchShoeById(id) {
 		throw error;
 	}
 }
-export async function deleteListing(id) {
+export async function deleteListing(id, token) {
 	try {
 		const res = await fetch(`${NIKEDAS_API_SHOES}/${id}`, {
+
+			headers: { Authorization: "Bearer " + token },
+			
 			method: "DELETE",
 		});
 		if (!res.ok) {
@@ -34,6 +48,7 @@ export async function deleteListing(id) {
 		throw error;
 	}
 }
+
 export async function createShoe(listing) {
 	const options = {
 		method: "POST",
@@ -50,10 +65,12 @@ export async function createShoe(listing) {
 	}
 }
 
-export async function updateShoe(id, listing) {
+export async function updateShoe(id, listing, token) {
 	const options = {
-		method: "PUT",
-		headers: { "Content-Type": "application/json" },
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: "Bearer " + token,
+		},
 		body: JSON.stringify(listing),
 	};
 
