@@ -6,7 +6,7 @@ import Subcategories from "../ShoesDisplay/Subcategories";
 import ShoeFilters from "../ShoesDisplay/ShoeFilters";
 import Accordion from "../UI/Accordion";
 import { fetchAllShoes } from "../../Services/shoes.services";
-import products from "../../Data/product_temp_data.json"
+import products from "../../Data/product_temp_data.json";
 
 export default function Shoes() {
 	const [shoesList, setShoesList] = useState([]);
@@ -15,16 +15,16 @@ export default function Shoes() {
 		setIsFilterOpen((prev) => !prev);
 		document.body.classList.toggle("no_scroll");
 	}
-	
+
 	async function getAllShoes() {
 		try {
-			// const shoesData = await fetchAllShoes();
-			setShoesList(products);
+			const shoesData = await fetchAllShoes();
+			setShoesList(shoesData);
 		} catch (error) {
 			//handle error
 		}
 	}
-	
+
 	useEffect(() => {
 		getAllShoes();
 	}, []);

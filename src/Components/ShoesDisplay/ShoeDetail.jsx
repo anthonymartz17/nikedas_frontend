@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./ShoeDetail.css";
 import { capitalizeFirstLetters } from "../../Utils/strings.utils";
 import { fetchShoeById } from "../../Services/shoes.services";
-
+import products from "../../Data/product_temp_data.json";
 const shoeSizes = [
 	"5",
 	"5.5",
@@ -29,31 +29,52 @@ const shoeSizes = [
 export default function ShoeDetail() {
 	const { id } = useParams();
 	const [shoe, setShoe] = useState(null);
-	const [currentImg, setCurrentImg] = useState("");
-	const [shoeBrandModel, setShoeBrandModel] = useState("");
-	const [shoeDescription, setShoeDescription] = useState("");
-	async function setShoeInfo(id) {
+	const [currentImg, setCurrentImg] = useState({});
+	const [selectedVariantImages, setSelectedVariantImages] = useState([]);
+	const [variantImages, setVariantImages] = useState([]);
+
+	async function setShoeDetails(id) {
 		try {
 			const selectedShoe = await fetchShoeById(id);
 			if (selectedShoe) {
 				setShoe(selectedShoe);
-				setCurrentImg(selectedShoe.primary_img);
-				setShoeBrandModel(
-					capitalizeFirstLetters(`${selectedShoe.brand} ${selectedShoe.model}`)
+
+				const images = findColorVariantImages(
+					selectedShoe,
+					selectedShoe.default_variant_id
 				);
-				setShoeDescription(
-					capitalizeFirstLetters(
-						`${selectedShoe.gender}'s ${selectedShoe.description}`
-					)
-				);
+				setSelectedVariantImages(images);
+				setCurrentImg(images.find((img) => img.is_main));
+
+				const variants = selectedShoe.variants.map((variant) => {
+					return {
+						variant_id: variant.id,
+						url: variant.images.find((item) => item.is_main).url,
+					};
+				});
+
+				setVariantImages(variants);
 			}
 		} catch (error) {
 			//handle error properly
 			throw error;
 		}
 	}
+
+	function findColorVariantImages(shoe, variantId) {
+		return (
+			shoe.variants.find((variant) => variant.id === variantId)?.images || []
+		);
+	}
+
+	function handleVariantChange(variantId) {
+		const images = findColorVariantImages(shoe, variantId);
+		setSelectedVariantImages(images);
+		setCurrentImg(images.find((img) => img.is_main) || images[0]);
+	}
+
 	useEffect(() => {
-		setShoeInfo(id);
+		setShoeDetails(id);
 	}, [id]);
 
 	if (!shoe) return <div>Loading...</div>;
@@ -62,29 +83,51 @@ export default function ShoeDetail() {
 		<div className="shoe_detail">
 			<div className="shoe_description">
 				<div>
-					<h5 className="poppins-semibold">{shoeBrandModel}</h5>
-					<p>{shoeDescription}</p>
+					<h5 className="poppins-semibold">
+						{" "}
+						{shoe ? capitalizeFirstLetters(`${shoe.brand} ${shoe.name}`) : ""}
+					</h5>
+					<p>
+						{shoe
+							? capitalizeFirstLetters(`${shoe.audience}'s ${shoe.description}`)
+							: ""}
+					</p>
 				</div>
 				<p className="poppins-semibold">${shoe.price}</p>
 			</div>
 			<div className="shoe_display">
 				<div className="shoe_display_main">
-					<img src={currentImg} alt={`photo of ${shoe.brand} shoe`} />
+					<img src={currentImg.url} alt={`photo of ${shoe.brand} shoe`} />
 				</div>
 				<div className="shoe_display_collage">
 					<ul className="shoe_display_collage_list">
-						{shoe.secondary_img.map((img, idx) => (
+						{selectedVariantImages.map((img, idx) => (
 							<li
 								onClick={() => setCurrentImg(img)}
 								className="shoe_display_collage_list_item cur"
 								key={idx}
 							>
-								<img src={img} alt={`photo of ${shoe.brand} shoe`} />
+								<img src={img.url} alt={`photo of ${shoe.brand} shoe`} />
 							</li>
 						))}
 					</ul>
 				</div>
 			</div>
+
+			<div className="shoe_variants">
+				<ul>
+					{variantImages.map((img, idx) => (
+						<li
+							onClick={() => handleVariantChange(img.variant_id)}
+							className="shoe_display_collage_list_item cur"
+							key={idx}
+						>
+							<img src={img.url} alt={`photo of ${shoe.brand} shoe`} />
+						</li>
+					))}
+				</ul>
+			</div>
+
 			<div className="shoe_sizes">
 				<p className="poppins-semibold">Select Size</p>
 				<ul className="shoe_sizes_list">

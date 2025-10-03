@@ -2,7 +2,6 @@ const NIKEDAS_API_SHOES = import.meta.env.VITE_APP_SHOES;
 
 export async function fetchAllShoes() {
 	try {
-		console.log(NIKEDAS_API_SHOES, "NIKEDAS_API_SHOES");
 		const res = await fetch(NIKEDAS_API_SHOES);
 		const shoes = await res.json();
 		return shoes;
@@ -10,6 +9,7 @@ export async function fetchAllShoes() {
 		throw error;
 	}
 }
+
 export async function fetchShoesBySeller(token) {
 	try {
 		const res = await fetch(`${NIKEDAS_API_SHOES}/seller-shoes`, {
