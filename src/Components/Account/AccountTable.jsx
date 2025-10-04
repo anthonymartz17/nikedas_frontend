@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./AccountTable.css";
 import { Link } from "react-router-dom";
-import { fetchAllShoes, deleteListing } from "../../Services/shoes.services";
+import {
+	fetchShoesBySeller,
+	deleteListing,
+} from "../../Services/shoes.services";
 import Alert from "../UI/Alert";
-import { fetchSellerListings } from "../../Services/users.services";
 import { useAuth } from "../../Context/AuthContext";
-import shoes from "../../assets/shoes_db";
+// import shoes from "../../assets/shoes_db";
 export default function AccountTable({}) {
 	const { currentUser } = useAuth();
-	const [listings, setListings] = useState(shoes);
+
+	const [listings, setListings] = useState([]);
 
 	const [modalOpen, setModalOpen] = useState(false);
 	const [itemToDelete, setItemToDelete] = useState(null);
@@ -20,7 +23,7 @@ export default function AccountTable({}) {
 
 	async function handleDeleteListing() {
 		try {
-			await deleteListing(itemToDelete.id);
+			await deleteListing(itemToDelete.id, currentUser.accessToken);
 			setListings((prev) =>
 				prev.filter((listing) => listing.id !== itemToDelete.id)
 			);
@@ -29,10 +32,9 @@ export default function AccountTable({}) {
 		}
 	}
 
-	async function getSellerListings(id) {
-		console.log(id,'esta?')
+	async function getSellerListings(token) {
 		try {
-			const shoesData = await fetchSellerListings(id);
+			const shoesData = await fetchShoesBySeller(token);
 			setListings(shoesData);
 		} catch (error) {
 			//handle error
@@ -40,8 +42,8 @@ export default function AccountTable({}) {
 	}
 
 	useEffect(() => {
-		getSellerListings(currentUser.uid);
-	}, [currentUser.uid]);
+		getSellerListings(currentUser.accessToken);
+	}, [currentUser]);
 
 	return (
 		<div className="">

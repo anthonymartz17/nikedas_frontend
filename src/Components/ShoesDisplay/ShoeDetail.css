@@ -2,7 +2,6 @@
 	font-family: "poppins";
 	margin-block: 2em;
 	overflow-y: auto;
-	width: 85%;
 }
 .shoe_description {
 	margin-bottom: 1em;
@@ -10,9 +9,24 @@
 }
 
 .shoe_display_collage_list {
-	display: flex;
-	gap: 0.1em;
-	margin-block: 0.5em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+}
+
+.shoe_variants {
+
+	width: 100%;
+	background-color: blue;
+}
+
+
+
+.shoe_display_collage_list_item img {
+	/* border-radius: 5px; */
+
+	border: 1px solid rgba(128, 128, 128, 0.316);
+	padding: 3px 5px;
 }
 
 .shoe_display_main {
@@ -76,6 +90,7 @@
 	.shoe_display_collage {
 		grid-area: collage;
 	}
+
 	.shoe_display_main {
 		grid-area: main;
 	}

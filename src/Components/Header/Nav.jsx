@@ -88,14 +88,14 @@ export default function Nav() {
 					)}
 				</div>
 				<div className="navbar_desktop_bottom">
-					<Link to="/" className="navbar_logo poppins-bold">
+					<Link to="/" className="navbar_logo  poppins-bold">
 						<img
 							className="nikedas_full_logo"
 							src={logoFullDark}
 							alt="nikedas_logo"
 						/>
 					</Link>
-					<div className="navbar_desktop_bottom_navigation">
+					<div className="navbar_desktop_bottom_navigation ">
 						<NavDesktop />
 						<input
 							onClick={() => toggleSearch()}

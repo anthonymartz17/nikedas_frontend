@@ -27,11 +27,11 @@ export default function SearchProduct({ onToggleSearch }) {
 					Cancel
 				</p>
 			</div>
-			<div className="search_results">
+			{/* <div className="search_results">
 				{Shoes.map((shoe) => (
 					<ShoeCard shoe={shoe} key={shoe.id} />
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 }

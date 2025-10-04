@@ -46,7 +46,7 @@ export default function ProfileForm({ formHeader }) {
 		e.preventDefault();
 
 		try {
-			const res = await updateUser(currentUser.uid, profileForm);
+			const res = await updateUser(profileForm, currentUser.accessToken);
 			setAlertMsg({
 				isSuccess: true,
 				isError: false,

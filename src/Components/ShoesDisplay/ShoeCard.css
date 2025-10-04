@@ -12,7 +12,7 @@
 
 .shoe_img_container {
 	width: 100%;
-	margin-bottom: 5px;
+	/* margin-bottom: 5px; */
 }
 
 .shoe_img_container img {
@@ -25,6 +25,30 @@
 	flex-direction: column;
 	font-size: small;
 	gap: 10px;
+	color: inherit;
+}
+
+.shoe_variants {
+	display: flex;
+	max-width: 12em;
+	gap: 0.2em;
+	overflow-x: auto;
+	margin-bottom: 0.5em;
+}
+
+.shoe_variants img {
+	outline: none;
+	padding: 0.2em;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	max-height: 3em;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+.shoe_variants img:hover {
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.selected_variant {
+	border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 768px) {

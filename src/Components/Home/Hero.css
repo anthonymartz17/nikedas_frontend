@@ -29,7 +29,6 @@
 	height: 100%;
 	/* background-color: rgba(128, 128, 128, 0.091); */
 	/* box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.225);  */
-
 }
 .hero-img {
 	max-width: 100%;
@@ -62,6 +61,16 @@
 	width: 50%;
 }
 
+@keyframes bob {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px); /* adjust height */
+	}
+}
+
 @media (min-width: 768px) {
 	.hero {
 		margin-top: 6em;
@@ -71,6 +80,10 @@
 	}
 	.hero-buttons a {
 		width: 100%;
+	}
+	.bobbing {
+		display: inline-block;
+		animation: bob 5s ease-in-out infinite;
 	}
 }
 

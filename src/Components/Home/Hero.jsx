@@ -23,13 +23,17 @@ export default function Hero() {
 					<Link to="/shoes" className="btn btn_bg_dark">
 						Browse
 					</Link>
-					<Link to="/auth/signup" className="btn btn_mute_dark">
+					<Link
+						to="/auth/signup"
+						state={{ account_type: "seller" }}
+						className="btn btn_mute_dark"
+					>
 						Become Seller
 					</Link>
 				</div>
 			</section>
 			<div className="hero_img_container">
-				<img className="hero-img" src={heroShoe} />
+				<img className="hero-img bobbing" src={heroShoe} />
 			</div>
 		</section>
 	);
